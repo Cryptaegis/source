@@ -32,14 +32,13 @@
                    if(mysqli_num_rows($req) == 0){
                         //si ça n'existe pas , créons le compte avec le nom le prénom le mail le mot de passe 
                         //et le type de compte
-                        //$name = $_POST['name'];
-//$firstname = $_POST['firstname'];
-                        //$email = $_POST['email'];
-                        //$mdp1 = $_POST['mdp1'];
-                        //$mdp2 = $_POST['mdp2'];
-                       // $hashedPwd = password_hash($mdp1, PASSWORD_DEFAULT);
-                        //$req = mysqli_query($con, "INSERT INTO utilisateur VALUES (NOT NULL, '$name' , '$firstname' , '$email' , '$hashedPwd' , '$type') ");
-                       $req = mysqli_query($con , "INSERT INTO utilisateur VALUES (NOT NULL, '$email' , '$mdp1') ");
+                        $name = $_POST['name'];
+                        $firstname = $_POST['firstname'];
+                        $email = $_POST['email'];
+                        $mdp1 = $_POST['mdp1'];
+                        $mdp2 = $_POST['mdp2'];
+                        $req = mysqli_query($con, "INSERT INTO utilisateur VALUES (NOT NULL, '$name' , '$firstname' , '$email' , '$mdp1') ");
+                       
                        if($req){
                            // si le compte a été créer , créons une variable pour afficher un message dans la page de
                            //connexion
