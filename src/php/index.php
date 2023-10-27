@@ -9,27 +9,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Connexion </title>
-    <link rel="stylesheet" href="src\css\style.css">
+    <title>Connexion Compte</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <?php 
+
        if(isset($_POST['button_con'])){
            //si le formulaire est envoyé
            //se connecter à la base de donnée
-           include "src\php\connect.php";
+           include "connect.php";
            //extraire les infos du formulaire
            extract($_POST);
            //verifions si les champs sont vides
            if(isset($email) && isset($mdp1) && $email != "" && $mdp1 != ""){
                //verifions si les identifiants sont justes
-               $req = mysqli_query($con , "SELECT * FROM utilisateur WHERE email = '$email' AND mdp = '$mdp1'");
+               $req = mysqli_query($con , "SELECT * FROM utilisateur WHERE email = '$email' AND password = '$mdp1'");
                if(mysqli_num_rows($req) > 0){
                    //si les ids sont justes
                    //Création d'une session qui contient l'email
                    $_SESSION['user'] = $email ;
                    //redirection vers la page Accueil
-                   header("location:src\html\Accueil.html");
+                   header("location:Accueil.html");
 
                }else {
                    //si non
@@ -62,7 +63,7 @@
         <label>Mots de passe</label>
         <input type="password" name="mdp1">
         <input type="submit" value="Connexion" name="button_con">
-        <p class="link">Vous n'avez pas de compte ? <a href="inscription.php">Créer un compte</a></p>
+        <p class="link">Vous n'avez pas de compte ? <a href="inscription-admin.php">Opérateur</a> ou <a href="inscription-agent.php">Agent</a></p>
     </form>
     
 </body>

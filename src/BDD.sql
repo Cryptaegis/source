@@ -23,46 +23,6 @@ password CHAR(32) NOT NULL
 )ENGINE = InnoDB;
 
 
-
-CREATE TABLE mission
-(
-    ID_m int AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    titre varchar(60) NOT NULL,
-    description varchar(60) NOT NULL,
-    alias_m varchar(60) NOT NULL,
-    country varchar(60) NOT NULL,
-    lastname_a varchar(60),
-    alias_contact varchar(60),
-    alias_cible varchar(60),
-    name_cm  varchar(255),
-    name_statut varchar(60),
-    name_planque varchar(60),
-    name_spe varchar(255),
-    CONSTRAINT fk_mission_agent FOREIGN KEY (lastname_a) REFERENCES agent(lastname_a) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT fk_mission_contact FOREIGN KEY (alias_contact) REFERENCES contact(alias_contact) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT fk_mission_cible FOREIGN KEY (alias_cible) REFERENCES cible(alias_cible) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT fk_mission_categorie FOREIGN KEY (name_cm) REFERENCES categorie_mission(name_cm) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT fk_mission_statut FOREIGN KEY (name_statut) REFERENCES statut(name_statut) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT fk_mission_planque FOREIGN KEY (name_planque) REFERENCES planque(name_planque) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT fk_mission_specialite FOREIGN KEY (name_spe) REFERENCES specialite(name_spe) ON DELETE CASCADE ON UPDATE CASCADE,
-    date_debut date NOT NULL,
-    date_fin date NOT NULL
-)ENGINE = InnoDB;
-
-
-CREATE TABLE agent
-(
-ID_a INT auto_increment NOT NULL primary key,
-lastname_a varchar(60) NOT NULL UNIQUE,
-firstname_a varchar(60) NOT NULL,
-birthdate date NOT NULL,
-telephone char(30),
-email VARCHAR(60),
-password CHAR(32) NOT NULL,
-name_spe varchar(255) NOT NULL,
-CONSTRAINT fk_agent_specialite FOREIGN KEY (name_spe) REFERENCES specialite(name_spe) ON DELETE CASCADE ON UPDATE CASCADE
-)ENGINE = InnoDB;
-
 CREATE TABLE cible
 (
     ID_cible int AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -110,7 +70,45 @@ CREATE TABLE planque
 CREATE TABLE specialite
 (
     ID_spe int AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    name_spe varchar(255) NOT NULL ADD UNIQUE
+    name_spe varchar(255) NOT NULL  UNIQUE
+)ENGINE = InnoDB;
+
+CREATE TABLE agent
+(
+ID_a INT auto_increment NOT NULL primary key,
+lastname_a varchar(60) NOT NULL UNIQUE,
+firstname_a varchar(60) NOT NULL,
+birthdate date NOT NULL,
+telephone char(30),
+email VARCHAR(60),
+password CHAR(32) NOT NULL,
+name_spe varchar(255) NOT NULL,
+CONSTRAINT fk_agent_specialite FOREIGN KEY (name_spe) REFERENCES specialite(name_spe) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE = InnoDB;
+
+CREATE TABLE mission
+(
+    ID_m int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    titre varchar(60) NOT NULL,
+    description varchar(60) NOT NULL,
+    alias_m varchar(60) NOT NULL,
+    country varchar(60) NOT NULL,
+    lastname_a varchar(60),
+    alias_contact varchar(60),
+    alias_cible varchar(60),
+    name_cm  varchar(255),
+    name_statut varchar(60),
+    name_planque varchar(60),
+    name_spe varchar(255),
+    CONSTRAINT fk_mission_agent FOREIGN KEY (lastname_a) REFERENCES agent(lastname_a) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_mission_contact FOREIGN KEY (alias_contact) REFERENCES contact(alias_contact) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_mission_cible FOREIGN KEY (alias_cible) REFERENCES cible(alias_cible) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_mission_categorie FOREIGN KEY (name_cm) REFERENCES categorie_mission(name_cm) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_mission_statut FOREIGN KEY (name_statut) REFERENCES statut(name_statut) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_mission_planque FOREIGN KEY (name_planque) REFERENCES planque(name_planque) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_mission_specialite FOREIGN KEY (name_spe) REFERENCES specialite(name_spe) ON DELETE CASCADE ON UPDATE CASCADE,
+    date_debut date NOT NULL,
+    date_fin date NOT NULL
 )ENGINE = InnoDB;
 
 
@@ -132,7 +130,7 @@ insert into administrateur (firstname, lastname, email, password) values ('Jeffe
 insert into administrateur (firstname, lastname, email, password) values ('Brok', 'Franzonello', 'bfranzonello8@goodreads.com', '$2a$04$D2SDZtGA7z6c9btgaWwCFugvjjHws7DQu.ZkfK4Wh6wWT7kl4/OzK');
 insert into administrateur (firstname, lastname, email, password) values ('Bobby', 'Andersson', 'bandersson9@nih.gov', '$2a$04$gHcegmlCCkM8m3mxETFWgeRLwCPJBXlTFo2XcFIxx3RHdH3BQZ7sa');
 
-insert into agent (lastname_a, firstname_a, birthdate, email, telephone, password, name_spe) values ('scott kennedy', 'Leon scott kennedy', '8/24/1977', 'LkennedyS@sun.com', '973-978-4874', '$2a$04$bhzB/pBXOVmQPAJp4nmLJuF6x7kM7BXGe1mDRvbAK7OqnW6C6ZGRO', 'Capacité à analyser des schémas criminels');
+insert into agent (lastname_a, firstname_a, birthdate, email, telephone, password, name_spe) values ('scott kennedy', 'Leon', '8/24/1977', 'LkennedyS@sun.com', '973-978-4874', '$2a$04$bhzB/pBXOVmQPAJp4nmLJuF6x7kM7BXGe1mDRvbAK7OqnW6C6ZGRO', 'Capacité à analyser des schémas criminels');
 insert into agent (lastname_a, firstname_a, birthdate, email, telephone, password, name_spe) values ('Wong', 'Ada', '00/00/0000', 'aWong@unblog.fr', '692-737-7874', '$2a$04$jyjxB4uPcfDCZxOb2fgDh.WkUfIXpwfukehFrZ9zPA8XXDem7Ng2y', 'recueillir des informations sans éveiller de soupçons');
 insert into agent (lastname_a, firstname_a, birthdate, email, telephone, password, name_spe) values ('Gionne', ' Excella', '3/11/1970', 'EGionne@purevolume.com', '748-790-3060', '$2a$04$L56WJlYKMxtL9W/adAKlVOeSX3dEIHXe2eD.hOfKbecJguhHQYx3q', 'Grande maîtrise arme à feu et combat contre arme biologique');
 insert into agent (lastname_a, firstname_a, birthdate, email, telephone, password, name_spe) values ('Wesker', 'Albert', '12/12/1960', 'Awesker@netlog.com', '827-354-0548', '$2a$04$BT9zib7TcV4PpEUCVtu5/OuP8Wsd4mKq3e381fDtymWkAxV3w3Hcm', 'Compétences en autodéfense et en arts martiaux pour faire face à des situations potentiellement dangereuses');

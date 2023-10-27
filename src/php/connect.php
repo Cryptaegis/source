@@ -1,14 +1,15 @@
 <?php
-$hs='localhost';
-$us='root';
-$ps='root';
-$db='agent';
+$user='root';
+$pass='';
 
-$mysqlconnect = mysqli_connect("$hs","$us","$ps", $db);
-
-if($mysqlconnect === false){
-    die("Could not connect");
-
-}else{
+try{
+    $db = new PDO ('mysql:host=localhost; dbname=agent_s', $user, $pass);
+    
     echo ("Connect Successfully!");
+
+
+}catch (PDOException $e){
+    print "Could not connect!: " . $e->getMessage() . "<br/>";
+    die;
 }
+
