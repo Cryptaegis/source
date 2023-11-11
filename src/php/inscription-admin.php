@@ -31,14 +31,15 @@ session_start();
             $error = "Les mots de passes sont différents !";
         }else{ //si non , verifions si le fisrtname, le lastname, l'email existe dans la base de donnée de la table administrateur
                 $sql = "SELECT * FROM administrateur WHERE firstname='$firstname' AND lastname='$lastname' AND email='$email'  AND password='$mdp1'";
-
                 $result = $pdo->query($sql);
                 $row = $result->fetch(PDO::FETCH_ASSOC);
                 if($row){
                     //si ça existe
+
                     $error = "Cet utilisateur existe déjà !";
                 }else{
                     $sql = "INSERT INTO administrateur (firstname, lastname, email, password) VALUES ('$firstname', '$lastname', '$email','$mdp1')";
+                    //hasher le mot de passe à l'ajout
                     $pdo->exec($sql);
                     // si le compte a été créer , créons une variable pour afficher un message dans la page de
                     //connexion

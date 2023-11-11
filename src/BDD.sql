@@ -1,3 +1,4 @@
+
 CREATE DATABASE Agent_S SET utf8mb4 COLLATE utf8mb4_generale_ci;
 
 CREATE TABLE administrateur
@@ -184,3 +185,6 @@ insert into cible (firstname, lastname , alias_cible, birthdate, nationalite) va
 insert into cible (firstname, lastname , alias_cible, birthdate, nationalite) values ('Noel', 'Laybourne', 'Lara Ombre', '3/3/2023', 'AF');
 insert into cible (firstname, lastname , alias_cible, birthdate, nationalite) values ('Keary', 'Picott', ' cicatra', '11/4/2022', 'FR');
 insert into cible (firstname, lastname , alias_cible, birthdate, nationalite) values ('Augy', 'Walisiak', 'Elena Dracul', '12/14/2022', 'RO');
+
+
+

@@ -27,45 +27,51 @@ session_start();
     //verifions si les champs sont vides
 if(isset($firstname) && isset($lastname) && isset($bday) && isset($phone) && isset($email) && isset($mdp1) && isset($mdp2) && isset($_POST['specialite']) && $firstname != "" && $lastname != "" && $bday !="" && $phone != ""  && $email != "" && $mdp1 != "" && $mdp2 !="" && $specialite != "" ){
         //verifions que les mots de passes sont conforme
+
         if ($mdp2 != $mdp1) {
             // s'ils sont differrent
             $error = "Les mots de passes sont différents !";
         }else{
                     //verifions si l'agent existe dans la table agent  
-                $sql = "SELECT * FROM agent WHERE  lastname_a='$lastname' AND firstname_a='$firstname' AND birthdate ='$bday' AND telephone ='$phone' AND email='$email' AND  password='$mdp1' AND name_spe='$specialite'";
+                $sql0 = "SELECT * FROM specialite WHERE name_spe = '$specialite'";
+                $sql = "SELECT * FROM agent WHERE  lastname_a='$lastname' AND firstname_a='$firstname' AND birthdate ='$bday' AND telephone ='$phone' AND email='$email' AND  password='$mdp1' AND name_spe = '$specialite'";
+                $result = $pdo->query($sql0);
                 $result = $pdo->query($sql);
                 $row = $result->fetch(PDO::FETCH_ASSOC);
                 if($row){
                     //si ça existe
                     $error = "Cet utilisateur existe déjà !";
                 }else{
-                    //inserons les infos dans la table agent
+                    //inserons les infos dans la table specialite and agent 
+                    $sql0 = "INSERT INTO specialite (name_spe) VALUES (:name_spe)";
                     $sql = "INSERT INTO agent (lastname_a, firstname_a, birthdate, telephone, email, password, name_spe) VALUES (:lastname_a, :firstname_a, :birthdate, :telephone, :email, :password, :name_spe)";
+                    $stmt = $pdo->prepare($sql0);
+                    $stmt->bindParam(":name_spe",$specialite);
+                    $stmt->execute();
                     $stmt = $pdo->prepare($sql);
-                    $stmt->execute(array(
-                    ':lastname_a' => $lastname,
-                    ':firstname_a' => $firstname,
-                    ':birthdate' => $bday,
-                    ':telephone' => $phone,
-                    ':email' => $email,
-                    ':password' => $mdp1,
-                    ':name_spe' => $specialite
-                    ));
-                
-            
-                // si le compte a été créer , créons une variable pour afficher un message dans la page de
-                    //connexion
-                    $message = "<div class='alert alert-success'>Compte crée avec succés! </div>";
-                $_SESSION['message'] = "<p class='message_inscription'>Votre compte a été créer avec succès !</p>";
-                $_SESSION['message'] = "Compte crée avec succés.";
-                //redirection vers la page de connexion
-                header("Location: index.php");
+                    $stmt->bindParam(":lastname_a",$lastname);
+                    $stmt->bindParam(":firstname_a",$firstname);
+                    $stmt->bindParam(":birthdate",$bday);
+                    $stmt->bindParam(":telephone",$phone);
+                    $stmt->bindParam(":email",$email);
+                    $stmt->bindParam(":password",$mdp1);
+                    $stmt->bindParam(":name_spe",$specialite);
+                    $stmt->execute();
+                    $stmt->closeCursor();
+                    if($stmt){
+                        //connexion à la page d'accueil
+                    header("Location: index.php");    
+                        //si le compte a été créer , créons une variable pour afficher un message dans la page de
+                        //connexion
+                        $_SESSION['message'] = "Compte crée avec succés.";
+                        
+                    }
+                    
                 }
             }
         }else{
                     $error ="Veuillez remplir tous les champs!";
     }
-
 
     ?>
 
@@ -81,15 +87,15 @@ if(isset($firstname) && isset($lastname) && isset($bday) && isset($phone) && iss
        
     </p>
     <label for="firstname">Prénom:</label>
-    <input type="text" name="lastname" id="lastname">
-    <label for="lastname">Nom:</label>
     <input type="text" name="firstname" id="firstname">
+    <label for="lastname">Nom:</label>
+    <input type="text" name="lastname" id="lastname">
     <label>
     Veuillez saisir votre date de naissance :
     <input type="date" name="bday" />
   </label>
   <label for="phone">Téléphone:</label>
-    <input type="text" name="phone" id="phony">
+    <input type="text" name="phone" id="phone">
     <label>Adresse Mail</label>
     <input type="email" name="email">
     <label>Mots de passe</label>
@@ -97,17 +103,11 @@ if(isset($firstname) && isset($lastname) && isset($bday) && isset($phone) && iss
     <label>Confirmation Mots de passe</label>
     <input type="password" name="mdp2" class="mdp2">
     <fieldset>
-  <legend>Select a power:</legend>
+  <legend>What is your power:</legend>
+    <input type="text" id="power" name="specialite" />
+    <label for="specialite" name="specialite">Write here:</label>
 
-  <div>
-    <input type="radio" id="stress" name="specialite" value="specialite" checked />
-    <label for="stress" name="specialite">Résistance au stress</label>
-  </div>
-
-  <div>
-    <input type="radio" id="dewey" name="drone" value="dewey" />
-    <label for="dewey">Dewey</label>
-  </div>
+ 
   </fieldset>
     <input type="submit" value="Inscription" name="button_inscription">
     <p class="link">Vous avez un compte ? <a href="index.php">Se connecter</a></p>

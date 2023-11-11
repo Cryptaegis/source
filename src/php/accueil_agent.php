@@ -6,6 +6,7 @@
     <title>Front-office</title>
 </head>
 <body>
+    <H1>Bienvenue sur la page Agent de terrain les baby!!!</H1>
     <div>
         <p>Comité pour la sécurité de l'État  Russe</p>
         <p>Россия не ведет переговоры с террористами, она их уничтожает.</p>
