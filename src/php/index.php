@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Connexion Compte</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <?php 
@@ -99,6 +99,7 @@
         <input type="submit" value="Connexion" name="button_con">
         <p class="link">Vous n'avez pas de compte ? <a href="inscription-admin.php">Opérateur</a> ou <a href="inscription-agent.php">Agent</a></p>
     </form>
-    
+    <script src="../JS/index.js"></script>
+
 </body>
 </html>

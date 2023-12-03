@@ -67,5 +67,7 @@
             xhttp.send()
         },500) // Actualiser le chat tous les 500 ms
     </script>
+     <script src="../JS/index.js"></script>
+
 </body>
 </html>
