@@ -296,7 +296,29 @@
 
     </main>
   </section>
-
+  <form action="" method="POST" class="form_mission">
+    <h1>Ajout Mission</h1>
+    <p class="message_error">
+        <?php
+        if(isset($error)){
+            echo($error);
+        }
+        ?>
+       
+    </p>
+    <label for="name">Nom:</label>
+    <input type="text" name="firstname" id="firstname">
+    <label for="name">Alias:</label>
+    <input type="text" name="lastname" id="lastname">
+    <label for="name">Statut:</label>
+    <input type="text" name="lastname" id="lastname">
+    <div class="form-group">
+    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+    <input type="submit" value="mission" name="button_mission">
+    <p class="link">Mission <a href="">Valider</a></p>
+</form>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
