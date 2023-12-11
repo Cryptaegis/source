@@ -15,7 +15,7 @@ use App\Entity\Mission;
 class MissionController extends AbstractController
 {
     /**
-     * @Route("/show", name="mission", methods: ['GET']))
+     * @Route("/show", name="Mission")
      */
     public function show(Environment $twig, Request $request, EntityManagerInterface $entityManager)
     {
@@ -26,13 +26,14 @@ class MissionController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid() && $agreeTerms) {
             // be absolutely sure they agree
-            if (true === $form['agreeTerms']->getData()) {};
            $entityManager->persist($mission);
            $entityManager->flush();
 
            return new Response('Mission number'. $mission->getId().'created..');
         }
-        return new  Response($twig->render('templates\mission\show.html.twig', ['mission_form'=>$form->createView()]));
+
+        return new  Response($twig->render('mission/show.html.twig', ['mission_form'=>$form->createView()]));
+
         // TODO: Implement the logic for the mission controller
         return new Response('Mission not created..');
         return $this->render('templates\mission\show.html.twig', [
