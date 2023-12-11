@@ -28,7 +28,6 @@ class MissionController extends AbstractController
             // be absolutely sure they agree
            $entityManager->persist($mission);
            $entityManager->flush();
-
            return new Response('Mission number'. $mission->getId().'created..');
         }
 
