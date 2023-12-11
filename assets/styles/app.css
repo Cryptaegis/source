@@ -361,12 +361,7 @@
   font-family: "Figtree", sans-serif;
 }
 
-body {
-  display: grid;
-  place-content: center;
-  min-height: 100vh;
-  background: #000;
-}
+
 
 .container {
   position: relative;
@@ -752,4 +747,5 @@ text-align: center;
    align-self: center; 
 
 }
+
 
