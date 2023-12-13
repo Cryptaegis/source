@@ -38,7 +38,7 @@ class Mission
     private ?string $DateDebut = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $DateFin = null;
+    private ?int $DateFin = null;
 
     public function getId(): ?int
     {

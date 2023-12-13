@@ -28,9 +28,9 @@ class MissionController extends AbstractController
             // be absolutely sure they agree
            $entityManager->persist($mission);
            $entityManager->flush();
-           return new Response('Mission number'. $mission->getId().'created..');
+           return $this->redirectToRoute('app_main');
+                      
         }
-
         return new  Response($twig->render('mission/show.html.twig', ['mission_form'=>$form->createView()]));
 
         // TODO: Implement the logic for the mission controller

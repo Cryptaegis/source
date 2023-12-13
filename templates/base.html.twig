@@ -8,14 +8,17 @@
         <!-- css file-->
         <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
         {% block stylesheets %}{% endblock %}
-        <link rel="stylesheet" href="{{asset('assets/css/styles.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/app.css')}}">
+
         <!--Js file-->
+        <script src="{{asset('assets/JS/bootstrap.bundle.min.js')}}"></script>
         {% block javascripts %}{% endblock %}
+        <script src="{{asset('assets/JS/script.js')}}"></script>
+
     </head>
     <body>
-        {% block body %}
 
-
+        {% block body %} 
         {% endblock %}
     </body>
 </html>

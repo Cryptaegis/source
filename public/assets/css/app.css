@@ -5,11 +5,11 @@
 }
 
 .op-ac {
-  background: #586126;
+  background: #4d6968;
 }
 
 .red-band {
-  background: #710e0d;
+  background: #660000;
   font-size: 1rem;
   position: relative;
   display: flex;
@@ -20,20 +20,20 @@
 .logo-header {
   position: absolute;
   z-index: 2;
-  background-image: url("../img/kisspng-coat-of-arms-of-russia-russian-empire-portable-net-pixabay-5c05f7742abac4.585166981543894900175.png");
+  background-image: url("../img/kisspng-coat-of-arms-of-russia-russian-empire-portable-net-pixabay-5c05f7742abac4.585166981543894900175.9bc2cb45.png");
   width: 10vw;
   height: 25vh;
   left: 30px;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  }
+}
 .header-text {
   margin: 0 auto;
   width: 50vw;
 }
-.btn-outline-danger{
-  border: #000 solid 4px;
+.btn-outline-danger {
+  border: #000000 solid 4px;
   position: absolute;
   z-index: 2;
   margin: 0 auto;
@@ -46,19 +46,18 @@
   margin-bottom: 1em;
   text-align: center;
 }
-.mission-link-container{
+.mission-link-container {
   display: flex;
-  position:relative; 
+  position: relative;
   justify-content: flex-end;
   margin-top: 4em;
-
 }
-.mission-link{
+.mission-link {
   font-size: 2rem;
   width: 20%;
   text-align: center;
   text-decoration: none;
-  color: black;
+  color: #000000;
 }
 
 /*menu Planque*/
@@ -155,30 +154,27 @@
 .card-hideout:nth-child(1):before {
   background-image: url("../img/restaurant.jpg");
   background-position: center;
-  background-size:cover;
-
-
+  background-size: cover;
 }
 .card-hideout:nth-child(2):before {
   background-image: url("../img/stade.jpg");
   background-position: center;
-  background-size:cover;
+  background-size: cover;
 }
 .card-hideout:nth-child(3):before {
   background-image: url("../img/canal.jpg");
   background-position: center;
-  background-size:cover;
+  background-size: cover;
 }
 .card-hideout:nth-child(4):before {
   background-image: url("../img/cafe.jpg");
-  
 }
 .card-hideout:nth-child(5):before {
   background-image: url("../img/castle.jpg");
   background-position: center;
-  background-size:cover;
+  background-size: cover;
 }
-.card-hideout:nth-child(6):before { 
+.card-hideout:nth-child(6):before {
   background-image: url("../img/usine.jpg");
 }
 
@@ -204,7 +200,7 @@
   font-style: italic;
   line-height: 1.35;
 }
-.btn{
+.btn {
   cursor: pointer;
   font-size: 0.65rem;
   font-weight: bold;
@@ -213,10 +209,10 @@
   background-color: black;
   border: none;
 }
-.btn:hover{
+.btn:hover {
   background-color: #0d0d0d;
 }
-.btn::after{
+.btn::after {
   outline: 1px dashed yellow;
   outline-offset: 3px;
 }
@@ -270,7 +266,7 @@
   margin: 10px auto;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .container-contact::after {
@@ -292,8 +288,30 @@
   float: left;
   shape-outside: margin-box;
   margin: 0 20px 5px 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.one-contact{
+.op0 {
+  background-image: url("../img/sombra.jpg");
+}
+.op_1 {
+  background-image: url("../img/jpsoldat.jpg");
+}
+.op_2 {
+  background-image: url("../img/merchant.jpg");
+}
+.op_3 {
+  background-image: url("../img/chaska.jpg");
+}
+.op_4 {
+  background-image: url("../img/malik.jpg");
+}
+.op_5 {
+  background-image: url("../img/noir.png");
+}
+
+.one-contact {
   right: 2em;
 }
 
@@ -313,19 +331,19 @@
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
-
 /* This container is needed to position the front and back side */
 .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
   text-align: center;
-  background-size:50%;
+  background-size: 50%;
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
+
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
@@ -360,8 +378,6 @@
   box-sizing: border-box;
   font-family: "Figtree", sans-serif;
 }
-
-
 
 .container {
   position: relative;
@@ -446,15 +462,15 @@
   height: max-content;
 }
 
-.ac-ag-logos{
+.ac-ag-logos {
   position: absolute;
   z-index: 2;
   height: 40vh;
-  width: 20vw;  
+  width: 20vw;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("../img/kisspng-coat-of-arms-of-russia-russian-empire-portable-net-pixabay-5c05f7742abac4.585166981543894900175.png");
+  background-image: url("../img/kisspng-coat-of-arms-of-russia-russian-empire-portable-net-pixabay-5c05f7742abac4.585166981543894900175.9bc2cb45.png");
 }
 .text-header {
   position: absolute;
@@ -486,171 +502,176 @@
   z-index: 1;
 }
 
-.search-box{
-  display:flex;
-  justify-content:center; 
-  padding:10px; 
+.search-box {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
-.recherche{
-  position:absolute;
-  top:56em; 
-  border-radius:20px;
-  background-color: #710E0D;
-  width:15vw;
-  height:5vh;
-  margin:0 auto;
-}
-
-.title-mission{
-	margin: 0;
-	font-size: 22px;
-	line-height: 1;
-	color: #423E37;
-  position: relative; 
+.recherche {
+  position: absolute;
+  top: 56em;
+  border-radius: 20px;
+  background-color: #710e0d;
+  width: 15vw;
+  height: 5vh;
+  margin: 0 auto;
 }
 
+.title-mission {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1;
+  color: #423e37;
+  position: relative;
+}
 
 .page {
-	width: 100vw;
-	height: 100vh;
+  width: 100vw;
+  height: 100vh;
   margin: 50em 1em 0em;
-	min-height: 700px;
-	overflow: hidden;
+  min-height: 700px;
+  overflow: hidden;
 }
 
 .tabs-controls {
-	position: relative;
-  background-color: #710E0D;
-	z-index: 10;
-	display: flex;
-	justify-content: center;
-	align-items: stretch;
+  position: relative;
+  background-color: #710e0d;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
   padding: 10px 0px 10px;
-	width: 100%;
-	max-width: 62.5rem;
-  border-radius: 5px;	
+  width: 100%;
+  max-width: 62.5rem;
+  border-radius: 5px;
   margin: 0 auto;
-	box-sizing: border-box;
-	list-style-type: none;
+  box-sizing: border-box;
+  list-style-type: none;
 }
 .tabs-controls__link {
-	position: relative;
-	display: block;
-	padding: 16px 32px;
-	font-size: 20px;
-	font-weight: 700;
-	color: rgb(255, 255, 255);/*Couleur des liens*/
-	text-transform: uppercase;
-	text-decoration: none;
+  position: relative;
+  display: block;
+  padding: 16px 32px;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(255, 255, 255); /*Couleur des liens*/
+  text-transform: uppercase;
+  text-decoration: none;
 }
 .tabs-controls__link:after {
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	display: block;
-	width: 0;
-	height: 4px;
-	background-color: #423E37;
-	border-radius: 2px;
-	margin: auto;
-	content: '';
-	transition: width 0.4s;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 0;
+  height: 4px;
+  background-color: #423e37;
+  border-radius: 2px;
+  margin: auto;
+  content: "";
+  transition: width 0.4s;
 }
 .tabs-controls__link--active:after {
-	width: 50%;
+  width: 50%;
 }
 .cards-container {
-	position: relative;
-	z-index: 1;
-	width: 500px;
-	height: calc(100vh - 205px);
-	margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  width: 500px;
+  height: calc(100vh - 205px);
+  margin: 0 auto;
 }
 .card {
-  top:10px;
-	position: absolute;
-	width: 30em;
-	height: 35em;
-	background-color: #EDEBD7;
-	border: 1px solid #423E37;
-	box-shadow: 9px 11px 3px 0px rgba(0, 0, 0, 0.2);
-	box-sizing: border-box;
-	padding: 40px;
-  overflow: hidden; 
-	transition: transform 0.3s, opacity 0.2s;
+  top: 10px;
+  position: absolute;
+  width: 30em;
+  height: 35em;
+  background-color: #edebd7;
+  border: 1px solid #423e37;
+  box-shadow: 9px 11px 3px 0px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  padding: 40px;
+  overflow: hidden;
+  transition: transform 0.3s, opacity 0.2s;
 }
 .card.hidden {
-	z-index: 100;
-	background-color: #fff;
-	color: #fff;
-	opacity: 0;
-	transition: color 0.5s, background-color 0.5s, transform 1s, opacity 0.2s 0.4s;
+  z-index: 100;
+  background-color: #fff;
+  color: #fff;
+  opacity: 0;
+  transition: color 0.5s, background-color 0.5s, transform 1s, opacity 0.2s 0.4s;
 }
 .card.hidden h1 {
-	color: #fff;
-	transition: color 0.5s;
+  color: #fff;
+  transition: color 0.5s;
 }
 .card.hidden:nth-of-type(1) {
-	transform: rotate(-25deg) translateX(101%) translateY(-5%) scale(0.6) skewX(9deg) skewY(8deg);
+  transform: rotate(-25deg) translateX(101%) translateY(-5%) scale(0.6)
+    skewX(9deg) skewY(8deg);
 }
 .card.hidden:nth-of-type(2) {
-	transform: rotate(-30deg) translateX(101%) translateY(-7%) scale(0.5) skewX(9deg) skewY(12deg);
+  transform: rotate(-30deg) translateX(101%) translateY(-7%) scale(0.5)
+    skewX(9deg) skewY(12deg);
 }
 .card.hidden:nth-of-type(3) {
-	transform: rotate(-95deg) translateX(101%) translateY(-44%) scale(0.5) skewX(3deg) skewY(9deg);
+  transform: rotate(-95deg) translateX(101%) translateY(-44%) scale(0.5)
+    skewX(3deg) skewY(9deg);
 }
 .card.hidden:nth-of-type(4) {
-	transform: rotate(-52deg) translateX(101%) translateY(-9%) scale(0.7) skewX(6deg) skewY(11deg);
+  transform: rotate(-52deg) translateX(101%) translateY(-9%) scale(0.7)
+    skewX(6deg) skewY(11deg);
 }
 .card.hidden:nth-of-type(5) {
-	transform: rotate(-57deg) translateX(101%) translateY(-16%) scale(0.1) skewX(6deg) skewY(6deg);
+  transform: rotate(-57deg) translateX(101%) translateY(-16%) scale(0.1)
+    skewX(6deg) skewY(6deg);
 }
 .card.hidden:nth-of-type(6) {
-	transform: rotate(-76deg) translateX(101%) translateY(-54%) scale(0.5) skewX(9deg) skewY(1deg);
+  transform: rotate(-76deg) translateX(101%) translateY(-54%) scale(0.5)
+    skewX(9deg) skewY(1deg);
 }
 .card:nth-of-type(1) {
-	z-index: 5;
-	transform: translateX(0px) translateY(0px);
+  z-index: 5;
+  transform: translateX(0px) translateY(0px);
 }
 .card:nth-of-type(2) {
-	z-index: 4;
-	transform: translateX(10px) translateY(10px);
+  z-index: 4;
+  transform: translateX(10px) translateY(10px);
 }
 .card:nth-of-type(3) {
-	z-index: 3;
-	transform: translateX(20px) translateY(20px);
+  z-index: 3;
+  transform: translateX(20px) translateY(20px);
 }
 .card:nth-of-type(4) {
-	z-index: 2;
-	transform: translateX(30px) translateY(30px);
+  z-index: 2;
+  transform: translateX(30px) translateY(30px);
 }
 .card:nth-of-type(5) {
-	z-index: 1;
-	transform: translateX(40px) translateY(40px);
+  z-index: 1;
+  transform: translateX(40px) translateY(40px);
 }
 .card:nth-of-type(6) {
-	z-index: 0;
-	transform: translateX(50px) translateY(50px);
+  z-index: 0;
+  transform: translateX(50px) translateY(50px);
 }
 /*footer start*/
 /*Contact*/
-.contact-ban{
+.contact-ban {
   border: #000 solid 3px;
   margin: 0 auto;
   width: 100%;
   height: 20vh;
 }
-.medium-text-ban{
-  display:flex;
+.medium-text-ban {
+  display: flex;
   width: 50vw;
-  top:2em; 
+  top: 2em;
   padding: 5px;
   justify-content: start;
-  position: relative ;
-  left:2em; 
+  position: relative;
+  left: 2em;
 }
-.facebook{
+.facebook {
   object-fit: contain;
   position: absolute;
   z-index: 1;
@@ -661,7 +682,7 @@
   background-repeat: no-repeat;
   background-image: url("../img/f_logo_RGB-Blue_72 - Copie.png");
 }
-.twitter{
+.twitter {
   object-fit: contain;
   position: absolute;
   z-index: 1;
@@ -672,7 +693,7 @@
   background-repeat: no-repeat;
   background-image: url("../img/Instagram_Glyph_Black.png");
 }
-.instagram{
+.instagram {
   object-fit: contain;
   position: absolute;
   z-index: 1;
@@ -683,69 +704,72 @@
   background-repeat: no-repeat;
   background-image: url("../img/logo-blackX.png");
 }
-.social-media{
+.social-media {
   position: relative;
-  margin: auto 0; 
+  margin: auto 0;
 }
 
 /*Logos*/
 
 .footer_logos,
-.big_logos{
+.big_logos {
   width: 10%;
-  height: 30vh; 
+  height: 30vh;
   position: relative;
   left: 10px;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url("../img/kisspng-coat-of-arms-of-russia-russian-empire-portable-net-pixabay-5c05f7742abac4.585166981543894900175.png"); 
+  background-image: url("../img/kisspng-coat-of-arms-of-russia-russian-empire-portable-net-pixabay-5c05f7742abac4.585166981543894900175.9bc2cb45.png");
 }
-.box-notion{
-  display:flex; 
-  width:100vw;
+.box-notion {
+  display: flex;
+  width: 100vw;
   margin: 0 auto;
 }
-.notion{
-  padding:10px; 
+.notion {
+  padding: 10px;
   width: 20vw;
   text-align: center;
 }
 
-.micro-text{
+.micro-text {
   position: absolute;
   margin-bottom: 1em;
   left: 40em;
-  padding:60px 0px 0px 80px;
+  padding: 60px 0px 0px 80px;
 }
 .mini-menu,
-.micro-titre{
-  line-height : 2;
+.micro-titre {
+  line-height: 2;
 }
 
-  .menu-text{
+.menu-text {
   text-decoration: none;
   color: black;
 }
-.menu-text:after{color:black ;}
-.menu-text:hover { text-decoration: none; }
-.menu-text:active { text-decoration: none; }
-.mention-box{
-  position: relative; 
-  display:flex;
-  flex-direction:column; 
+.menu-text:after {
+  color: black;
+}
+.menu-text:hover {
+  text-decoration: none;
+}
+.menu-text:active {
+  text-decoration: none;
+}
+.mention-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   align-content: space-around;
-  margin: 0 auto; 
-  top:10em; 
-  padding: 10px;   
+  margin: 0 auto;
+  top: 10em;
+  padding: 10px;
 }
-.mention{
-text-align: center;
-  width:100%; 
+.mention {
+  text-align: center;
+  width: 100%;
 }
-.copyright{
-  margin-top:10px;
-   align-self: center; 
-
+.copyright {
+  margin-top: 10px;
+  align-self: center;
 }
-
-

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %} {% block title %}Hello!{% endblock %} {% block
+body %}
+<form action="" method="POST" class="form_connexion_inscription">
+  <h1>CONNEXION</h1>
+  {# affichons le message qui dit qu'un compte a été créer#}
+    {% if message is defined %}
+        <p>{{ message }}</p>
+        {% endif %}
+  <label>Adresse Mail</label>
+
+  <input type="email" name="email" />
+  <label>Mots de passe</label>
+  <input type="password" name="mdp1" />
+  <label>Vous êtes ?</label>
+  <select name="type" id="type">
+    <option value="OPERATEUR">Opérateur</option>
+    <option value="AGENT">Agent</option>
+  </select>
+
+  <input type="submit" value="Connexion" name="button_con" />
+  <p class="link">
+    Vous n'avez pas de compte ? <a href="inscription-admin.php">Opérateur</a> ou
+    <a href="inscription-agent.php">Agent</a>
+  </p>
+</form>
+
+{% endblock %}
