@@ -11,7 +11,6 @@ use App\Entity\Mission;
 //KERNEL
 
 
-
 class MissionController extends AbstractController
 {
     /**
@@ -19,6 +18,8 @@ class MissionController extends AbstractController
      */
     public function show(Environment $twig, Request $request, EntityManagerInterface $entityManager)
     {
+        //Récupération de la liste des missions en base
+
         $mission = new Mission();
         $form = $this->createForm(MissionFormType::class, $mission);
         $form->handleRequest($request);
@@ -28,8 +29,8 @@ class MissionController extends AbstractController
             // be absolutely sure they agree
            $entityManager->persist($mission);
            $entityManager->flush();
-           return $this->redirectToRoute('app_main');
-                      
+           return $this->redirectToRoute('ac-agent',
+           ['id'=>$mission->getId()]);             
         }
         return new  Response($twig->render('mission/show.html.twig', ['mission_form'=>$form->createView()]));
 
@@ -39,4 +40,15 @@ class MissionController extends AbstractController
             'controller_name' => 'MissionController',
         ]);
     }
+    /**
+     * @Route("/agent/{id}", name="ac-agent")
+     */
+    public function agent(Environment $twig)
+    {
+        // Récupère l'entity à partir de la base de données et l'affiche
+
+        return new  Response($twig->render('mission/agent.html.twig', ['id'=>"1"]));
+    }
+    
+
 }
