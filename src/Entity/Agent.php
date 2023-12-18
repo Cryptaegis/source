@@ -33,8 +33,10 @@ class Agent
     #[ORM\Column]
     private ?int $phone = null;
 
+
+
     #[ORM\Column(length: 255)]
-    private ?string $hash_property_path = null;
+    private ?string $Password = null;
 
     public function getId(): ?int
     {
@@ -101,14 +103,15 @@ class Agent
         return $this;
     }
 
-    public function getHashPropertyPath(): ?string
+   
+    public function getPassword(): ?string
     {
-        return $this->hash_property_path;
+        return $this->Password;
     }
 
-    public function setHashPropertyPath(string $hash_property_path): static
+    public function setPassword(string $Password): static
     {
-        $this->hash_property_path = $hash_property_path;
+        $this->Password = $Password;
 
         return $this;
     }

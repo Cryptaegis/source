@@ -5,7 +5,6 @@ namespace App\Form;
 use App\Entity\Agent;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -21,16 +20,8 @@ class InscriptionAgentType extends AbstractType
             ->add('email', EmailType::class)
             ->add('birthdate')
             ->add('phone')
-            
-        ;
-        $builder->add('plainPassword', RepeatedType::class, [
-            'type' => PasswordType::class,
-            'first_options'  => ['label' => 'Password', 'hash_property_path' => 'password'],
-            'second_options' => ['label' => 'Repeat Password'],
-            'mapped' => false,
-
-        ])
-        ->add('Submit', SubmitType::class)
+            ->add('password', PasswordType::class)
+            ->add('Submit', SubmitType::class)
         ;
     }
 
@@ -38,6 +29,9 @@ class InscriptionAgentType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Agent::class,
+            'csrf_protection'=> true, 
+            'crsf_field_name'=> '_token',
+            'crsf_token_id' => 'agent_item',
         ]);
     }
 }
