@@ -614,6 +614,10 @@
   transform: rotate(-76deg) translateX(101%) translateY(-54%) scale(0.5)
     skewX(9deg) skewY(1deg);
 }
+.card.hidden:nth-of-type(7) {
+  transform: rotate(-79deg) translateX(101%) translateY(-54%) scale(0.5)
+    skewX(9deg) skewY(1deg);
+}
 .card:nth-of-type(1) {
   z-index: 5;
   transform: translateX(0px) translateY(0px);
@@ -638,6 +642,12 @@
   z-index: 0;
   transform: translateX(50px) translateY(50px);
 }
+.card:nth-of-type(7) {
+  z-index: 0;
+  transform: translateX(50px) translateY(50px);
+}
+
+
 /*footer start*/
 /*Contact*/
 .contact-ban {
@@ -740,18 +750,10 @@
 .menu-text:active {
   text-decoration: none;
 }
-.mention-box {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-content: space-around;
-  margin: 0 auto;
-  top: 10em;
-  padding: 10px;
-}
+
 .mention {
-  text-align: center;
-  width: 100%;
+  position: relative;
+
 }
 .copyright {
   margin-top: 10px;

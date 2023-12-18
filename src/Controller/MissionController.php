@@ -30,9 +30,10 @@ class MissionController extends AbstractController
            $entityManager->persist($mission);
            $entityManager->flush();
            return $this->redirectToRoute('ac-agent',
-           ['id'=>$mission->getId()]);             
+           ['mission_form'=>$mission->getId()]);             
         }
         return new  Response($twig->render('mission/show.html.twig', ['mission_form'=>$form->createView()]));
+
 
         // TODO: Implement the logic for the mission controller
         return new Response('Mission not created..');
@@ -40,15 +41,36 @@ class MissionController extends AbstractController
             'controller_name' => 'MissionController',
         ]);
     }
-    /**
-     * @Route("/agent/{id}", name="ac-agent")
-     */
-    public function agent(Environment $twig)
+
+ /**
+     * @Route("/agent/{mission_form}", name="ac-agent")
+    */
+    public function agent(Environment $twig, Request $request)
     {
-        // Récupère l'entity à partir de la base de données et l'affiche
-
-        return new  Response($twig->render('mission/agent.html.twig', ['id'=>"1"]));
+        $mission = new Mission();
+        $form = $this->createForm(MissionFormType::class, $mission);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()){
+            $data= $form->getData();
+            $nom = $data->getNom();
+            $alias = $data->getAlias();
+            $statut = $data->getStatut();
+            $description = $data->getDescription();
+            $contact = $data->getContact();
+            $cible = $data->getCible();
+            $planque =$data->getPlanque();
+            $dated = $data->getDateDebut();
+            $datef = $data->getDateFin();
+            return $this->render('agent/index.html.twig',['Nom'=>$nom, 'Alias' => $alias, 'Statut' => $statut, 'Description' => $description, 'Contact' => $contact, 'Cible' => $cible, 'Planque'=> $planque, 'DateDebut' => $dated, 'DateFin'=>$datef ]);
+        }else{
+            return $this->render('mission/show.html.twig',
+            ['mission_form'=>$form]
+);
+        }
+        
+        //afficher le resultat du formulaire dans le document index.html.twig
+        /* return $this->render('agent/index.html.twig', [
+            'controller_name' => 'AgentController',
+        ]);*/
     }
-    
-
 }

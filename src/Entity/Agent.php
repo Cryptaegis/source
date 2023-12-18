@@ -12,12 +12,17 @@ class Agent
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
+         /*@Assert\NotBlank*/
 
     #[ORM\Column(length: 255)]
     private ?string $Nom = null;
+         /*@Assert\NotBlank*/
 
     #[ORM\Column(length: 255)]
-    private ?string $Prénom = null;
+    private ?string $Prenom = null;
+        /*@Assert\NotBlank
+        *@Assert\Email
+        */
 
     #[ORM\Column(length: 255)]
     private ?string $email = null;
@@ -27,6 +32,9 @@ class Agent
 
     #[ORM\Column]
     private ?int $phone = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $hash_property_path = null;
 
     public function getId(): ?int
     {
@@ -45,14 +53,14 @@ class Agent
         return $this;
     }
 
-    public function getPrénom(): ?string
+    public function getPrenom(): ?string
     {
-        return $this->Prénom;
+        return $this->Prenom;
     }
 
-    public function setPrénom(string $Prénom): static
+    public function setPrenom(string $Prenom): static
     {
-        $this->Prénom = $Prénom;
+        $this->Prenom = $Prenom;
 
         return $this;
     }
@@ -89,6 +97,18 @@ class Agent
     public function setPhone(int $phone): static
     {
         $this->phone = $phone;
+
+        return $this;
+    }
+
+    public function getHashPropertyPath(): ?string
+    {
+        return $this->hash_property_path;
+    }
+
+    public function setHashPropertyPath(string $hash_property_path): static
+    {
+        $this->hash_property_path = $hash_property_path;
 
         return $this;
     }

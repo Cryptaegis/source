@@ -20,7 +20,7 @@ body %}
   <input type="submit" value="Connexion" name="button_con" />
   <p class="link">
     Vous n'avez pas de compte ? <a href="inscription-admin.php">Opérateur</a> ou
-    <a href="inscription-agent.php">Agent</a>
+    <a href="{{ path('/inscription/agent', {'type': 'inscription_agent'} )}} ">Agent</a>
   </p>
 </form>
 

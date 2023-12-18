@@ -53,7 +53,7 @@
             </li>
             <li class="tabs-controls__item">
                 <a href="#" class="tabs-controls__link" data-id="6">
-                    L'Anneau
+                     {{Alias}}
                 </a>
             </li>
         </ul>
@@ -148,20 +148,20 @@
             <p> Date de fin: 20/022025</p><br>
             </p>
         </div>
-        <div class="card" id="6">
-            <p class="title-mission">{{mission.Nom}}</p>
-            <p>
-            <p>Statut: {{mission.Statut}}</p><br>
-            <p>{{mission.Description}}</p><br>
+        <div class="card" id="7">
+            <p class="title-mission">{{Nom}}</p>
+            <p>Statut:{{Statut}}</p><br>
+            <p>Desciption:{{Description}}</p><br>
             <p>Agent: </p><br>
-            <p>Contact:{{mission.Contact}}</p><br>
-            <p>Cible:{{mission.Cible}}</p><br>
-            <p>Planque: {{mission.Planque}} </p><br>
-            <p>Spécialité: Compréhension des traditions et de la culture transylvanienne.</p><br>
-            <p>Date de début: {{mission.DateDebut}}</p>
-            <p> Date de fin: {{mission.DateFin}}</p><br>
-            </p>
+            <p>Contact:{{Contact}}</p><br>
+            <p>Cible:{{Cible}}</p><br>
+            <p>Planque: {{Planque}}</p><br>
+            <p>Spécialité: </p><br>
+            <p>Date de début:{{DateDebut}}</p>
+            <p> Date de fin:{{DateFin}}</p><br>
+        </p>
         </div>
+
     </section>
 </section>
 {% include "_partials/_footer.html.twig" %}
