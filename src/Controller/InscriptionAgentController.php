@@ -27,7 +27,7 @@ class InscriptionAgentController extends AbstractController
            $manager->flush();
 
 
-            return $this->redirectToRoute('app_main');
+            return $this->redirectToRoute('app_login');
         }
 
         return new Response($twig->render('inscription_agent/index.html.twig', ['agent_form' =>$form->createView()]));
