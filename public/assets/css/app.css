@@ -759,3 +759,15 @@
   margin-top: 10px;
   align-self: center;
 }
+fieldset {
+  margin: 0 auto;
+  width: 50%;
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+}
+
+legend {
+  width: 50%;
+}
+

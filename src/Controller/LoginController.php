@@ -2,36 +2,50 @@
 
 namespace App\Controller;
 
-use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
-use Twig\Environment;
-use App\Entity\Agent;
-use App\Form\InscriptionAgentType;
-use Symfony\Component\HttpFoundation\Request;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class LoginController extends AbstractController
 {
-    #[Route('/login', name: 'app_login')]
-
-    public function index(AuthenticationUtils $authenticationUtils, Environment $twig, Request $request, EntityManagerInterface $manager): Response
+    /**
+     * @Route("/login", name="app_login")
+     */
+    public function login(AuthenticationUtils $authenticationUtils): Response
     {
-
-         // get the login error if there is one
-     $error = $authenticationUtils->getLastAuthenticationError();
-       // last username entered by the user
-        $mail = $request->request->get('email');
-        if ($request->isMethod('POST') && $authenticationUtils->getLastAuthenticationError() === null) {
-           return $this->redirectToRoute('Mission');             
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+        if ($this->getUser()) {
+            return $this->redirectToRoute('Mission');
         }
+       $authChecker = $this->container->get('security.authorization_checker');
+       if ($authChecker->isGranted('ROLE_ADMIN')) {
+           return $this->redirectToRoute('admin');
+       }
+       if ($authChecker->isGranted('ROLE_AGENT')) {
+           return $this->redirectToRoute('agent');
+       }
+       return $this->render('login/login.html.twig', [
+        'last_username' => $authenticationUtils->getLastUsername(),
+        'error'         => $authenticationUtils->getLastAuthenticationError(),
+    ]);
+
+        return $this->render('login/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+    }
+            
+   
 
 
-        return $this->render('login/index.html.twig', [
-            'mail' => $mail,
-              'error'         => $error,
-        ]);
 
+
+    /**
+     * @Route("/logout", name="app_logout")
+     */
+    public function logout()
+    {
+        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
 }
