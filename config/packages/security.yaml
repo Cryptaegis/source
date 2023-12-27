@@ -20,7 +20,7 @@ security:
             logout:
                 path: app_logout
                 # where to redirect after logout
-                 target: home
+                target: home
 
             remember_me:
                 secret: '%kernel.secret%'
@@ -37,17 +37,16 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/membre, roles: ROLE_USER }
-              # ou -  { path: ^/membre, roles: IS_AUTHENTICATED_FULLY }
-               - { path: ^/logout, roles: ROLE_USER }
+       # - { path: ^/admin, roles: ROLE_ADMIN }
+       # - { path: ^/membre, roles: ROLE_USER }
+              # { path: ^/logout, roles: ROLE_USER }
 
                 # permet de rendre la route /new accessible pour les utilisateurs anonymes (non connecté)
-                - { path: ^/utilisateur/new, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+                #- { path: ^/utilisateur/new, roles: IS_AUTHENTICATED_ANONYMOUSLY }
 
                 # bloque toutes les routes commençant par /utilisateur sauf la ligne du dessus
-                - { path: ^/utilisateur, roles: ROLE_USER }
-                - { path: ^/membre, roles: IS_AUTHENTICATED_FULLY }
+                #- { path: ^/utilisateur, roles: ROLE_USER }
+               # - { path: ^/membre, roles: IS_AUTHENTICATED_FULLY }
 
 when@test:
     security:
