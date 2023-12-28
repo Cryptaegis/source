@@ -19,11 +19,9 @@ class UtilisateurType extends AbstractType
             ->add('email', EmailType::class) // Use the imported class
             // ...
 
-                        ->add('roles', CollectionType::class, [
-                // ...
-
+            ->add('roles', CollectionType::class, [
                 'entry_type' => TextType::class,
-            ]) 
+            ])
             ->add('password')
 
             ->add('save', SubmitType::class);

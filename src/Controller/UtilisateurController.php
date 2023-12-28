@@ -18,11 +18,14 @@ use Doctrine\ORM\EntityManagerInterface;
  */
 class UtilisateurController extends AbstractController
 {
+
+    
     /**
      * @Route("/", name="utilisateur_index", methods={"GET"})
      */
     public function index(UtilisateurRepository $utilisateurRepository, Session $session): Response
     {
+        
         //besoin de droits admin
         $utilisateur = $this->getUser();
         if (!$utilisateur) {
@@ -43,6 +46,7 @@ class UtilisateurController extends AbstractController
     public function new(Request $request, UserPasswordHasherInterface $passwordHasher, Session $session, EntityManagerInterface $doctrine): Response
     {
 
+        
         //test de sécurité, un utilisateur connecté ne peut pas s'inscrire
         $utilisateur = $this->getUser();
         if ($utilisateur) {
@@ -53,9 +57,9 @@ class UtilisateurController extends AbstractController
         $utilisateur = new Utilisateur();
         $form = $this->createForm(UtilisateurType::class, $utilisateur);
         $form->handleRequest($request);
-
+            
         if ($form->isSubmitted() && $form->isValid()) {
-            // ...
+
             $entityManager = $doctrine;
             $utilisateur->setPassword($passwordHasher->hashPassword($utilisateur, $utilisateur->getPassword()));
             /* uniquement pour créer un admin
@@ -72,6 +76,7 @@ class UtilisateurController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+  
 
     /**
      * @Route("/{id}", name="utilisateur_show", methods={"GET"})
@@ -90,7 +95,9 @@ class UtilisateurController extends AbstractController
     public function edit(Request $request, Utilisateur $utilisateur, Session $session, UserPasswordHasherInterface $passwordHasher, EntityManagerInterface $doctrine,  $id): Response
     {
         $utilisateur = $this->getUser();
-        if ($utilisateur->$doctrine != $id) {
+        $utilisateur = $doctrine->getRepository(Utilisateur::class)->find($id);
+        // Verify if the current user has the right to modify the targeted user
+        if ($id != $id ){
             // un utilisateur ne peut pas en modifier un autre
             $session->set("message", "Vous ne pouvez pas modifier cet utilisateur");
             return $this->redirectToRoute('membre');
@@ -99,9 +106,10 @@ class UtilisateurController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->$utilisateur->setPassword($passwordHasher->hashPassword($this->$utilisateur, $request->request->get('password')));
-            $this->$doctrine->getManager()->flush();
 
+            $utilisateur->setPassword($passwordHasher->hashPassword($utilisateur, $utilisateur->getPassword()));
+
+            $doctrine->flush();
             return $this->redirectToRoute('utilisateur_index');
         }
 

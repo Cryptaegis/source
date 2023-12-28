@@ -13,12 +13,12 @@
 
                         {% if app.user %}
                                 <div class="mb-3">
-                                        Bonjour {{ app.user.username }} <a class="btn btn-sm btn-danger" href="{{ path('app_logout') }}">Déconnexion</a>
+                                        Bonjour {{ app.user.id }} <a class="btn btn-sm btn-danger" href="{{ path('Mission') }}">Mission</a>
                                 </div>
                         {% else %}
                                 <div class="row">
                                         <div class="col-12 mt-3">
-                                                <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" required autofocus placeholder="pseudo">
+                                                <input type="text" value="{{ last_username }}" name="email" id="inputUsername" class="form-control" required autofocus placeholder="pseudo">
                                         </div>
                                         <div class="col-12 mt-3 mb-3">
                                                 <input type="password" name="password" id="inputPassword" class="form-control" required placeholder="mot de passe">

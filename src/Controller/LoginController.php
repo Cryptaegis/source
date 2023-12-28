@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class LoginController extends AbstractController
 {
@@ -19,21 +20,21 @@ class LoginController extends AbstractController
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
         if ($this->getUser()) {
-            return $this->redirectToRoute('Mission');
+            return $this->redirectToRoute('membre');
         }
        $authChecker = $this->container->get('security.authorization_checker');
        if ($authChecker->isGranted('ROLE_ADMIN')) {
            return $this->redirectToRoute('admin');
        }
-       if ($authChecker->isGranted('ROLE_AGENT')) {
-           return $this->redirectToRoute('agent');
+       if ($authChecker->isGranted('ROLE_USER')) {
+           return $this->redirectToRoute('membre');
        }
        return $this->render('login/login.html.twig', [
-        'last_username' => $authenticationUtils->getLastUsername(),
+        'email' => $authenticationUtils->getLastUsername(),
         'error'         => $authenticationUtils->getLastAuthenticationError(),
     ]);
 
-        return $this->render('login/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+        return $this->render('login/login.html.twig', ['email' => $lastUsername, 'error' => $error]);
     }
             
    
