@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use Twig\Environment;
-use App\Entity\Agent;
+use App\Entity\Agent; // Add this line to import the missing class
 use App\Form\InscriptionAgentType;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\ORM\EntityManagerInterface;
@@ -16,7 +16,7 @@ class InscriptionAgentController extends AbstractController
 
     #[Route('/in', name: 'inscription_agent')]
 
-    public function index(Environment $twig, Request $request, EntityManagerInterface $manager) // Update this line
+    public function index(Environment $twig, Request $request, EntityManagerInterface $manager)
     {
         $agent= new Agent();
         $form = $this->createForm(InscriptionAgentType::class, $agent);

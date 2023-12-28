@@ -20,14 +20,14 @@ class LoginController extends AbstractController
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
         if ($this->getUser()) {
-            return $this->redirectToRoute('membre');
+            return $this->redirectToRoute('home');
         }
        $authChecker = $this->container->get('security.authorization_checker');
        if ($authChecker->isGranted('ROLE_ADMIN')) {
-           return $this->redirectToRoute('admin');
+           return $this->redirectToRoute('Mission');
        }
        if ($authChecker->isGranted('ROLE_USER')) {
-           return $this->redirectToRoute('membre');
+           return $this->redirectToRoute('ac-agent');
        }
        return $this->render('login/login.html.twig', [
         'email' => $authenticationUtils->getLastUsername(),
