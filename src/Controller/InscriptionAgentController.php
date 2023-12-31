@@ -2,38 +2,46 @@
 
 namespace App\Controller;
 
-use Twig\Environment;
-use App\Entity\Agent; // Add this line to import the missing class
+use App\Entity\Utilisateur;
 use App\Form\InscriptionAgentType;
-use Symfony\Component\HttpFoundation\Response;
-use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Doctrine\ORM\EntityManagerInterface;
+
 
 class InscriptionAgentController extends AbstractController
 {
 
-    #[Route('/in', name: 'inscription_agent')]
+    #[Route('/{id}/account', name: 'inscription_agent')]
 
-    public function index(Environment $twig, Request $request, EntityManagerInterface $manager)
+    public function edit(Request $request, Utilisateur $utilisateur, Session $session, UserPasswordHasherInterface $passwordHasher, EntityManagerInterface $doctrine,  $id): Response
     {
-        $agent= new Agent();
-        $form = $this->createForm(InscriptionAgentType::class, $agent);
+        $utilisateur = $this->getUser();
+        $utilisateur = $doctrine->getRepository(Utilisateur::class)->find($id);
+        // Verify if the current user has the right to modify the targeted user
+        if ($id != $id ){
+            // un utilisateur ne peut pas en modifier un autre
+            $session->set("message", "Vous ne pouvez pas modifier cet utilisateur");
+            return $this->redirectToRoute('membre');
+        }
+        $form = $this->createForm(InscriptionAgentType::class, $utilisateur);
         $form->handleRequest($request);
-        if($form->isSubmitted() && $form->isValid()){
 
-           $manager->persist($agent);
-           $manager->flush();
+        if ($form->isSubmitted() && $form->isValid()) {
 
+            $utilisateur->setPassword($passwordHasher->hashPassword($utilisateur, $utilisateur->getPassword()));
 
-            return $this->redirectToRoute('app_login');
+            $doctrine->flush();
+            return $this->redirectToRoute('utilisateur_index');
         }
 
-        return new Response($twig->render('inscription_agent/index.html.twig', ['agent_form' =>$form->createView()]));
-
-        return $this->render('inscription_agent/index.html.twig', [
-            'controller_name' => 'InscriptionAgentController',
+        return $this->render('utilisateur/edit.html.twig', [
+            'utilisateur' => $utilisateur,
+            'form' => $form->createView(),
         ]);
     } 
      
