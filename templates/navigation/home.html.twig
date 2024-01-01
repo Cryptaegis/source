@@ -1,35 +1,56 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Page d'accueil{% endblock %}
-
+ 
 {% block body %}
 <a class="btn btn-sm btn-danger" href="{{ path('app_login') }}">Connexion</a>
-        <h1>Mon super site</h1>
+        <h1>Bienvenue sur le Site Gouvernemental de la Fédération de Russie</h1>
 
-        <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam,
-        feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris
-        placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi.
-         Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+        <section>
+        <h3><strong>Actualités Gouvernementales</strong></h3>
+        <p>Restez informé des dernières annonces officielles, déclarations gouvernementales, et événements importants touchant la Fédération de Russie.</p>
+        <img src="../assets/img/Actualité-gouv.jpg" alt="office-fourniture" class="rec rectangle-picture0">
+        </section>
 
-        <h2>Header Level 2</h2>
-        <ol>
-                <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                <li>Aliquam tincidunt mauris eu risus.</li>
-        </ol>
-        <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna.
-        Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa.
-        Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+        <section>
+        <h3><strong>Transparence et Rapports</strong></h3>
+        <p>Consultez nos rapports annuels, statistiques économiques, et informations sur la gouvernance pour une transparence totale sur l'action gouvernementale.</p>
+         <img src="../assets/img/transparence.jpg" alt="courbe" class="w3-circle">
+        </section>
 
-        <h3>Header Level 3</h3>
-        <ul>
-                <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                <li>Aliquam tincidunt mauris eu risus.</li>
-        </ul>
-        <pre><code>
-                #header h1 a {
-                display: block;
-                width: 300px;
-                height: 80px;
-                }
-        </code></pre>
+        <section>
+        <div class="container-rectangle"></div>
+        <aside>
+        <h3><strong>Participation Citoyenne</strong></h3>
+       <p>Exprimez votre opinion et participez aux consultations publiques. Votre voix compte dans la prise de décision gouvernementale.</p>
+         </aside>
+        </section>
+
+        <section>
+        <div class="container-rectangle1"></div>
+       <h3><strong>À Propos du Gouvernement</strong></h3>
+       <p>Découvrez la structure du gouvernement russe, les institutions clés, et la vision stratégique pour le développement du pays.</p>
+       </section>
+
+       <section>
+       <h3><strong>Agenda Gouvernemental</strong></h3>
+       <p>Explorez l'agenda des activités gouvernementales, des sessions parlementaires aux événements diplomatiques, pour suivre l'évolution de la politique russe.</p>
+        <img src="../assets/img/Agenda-gouv.png" alt="Fourniture" class="rond rond-picture">
+        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-arrow-return-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5"/>
+</svg>
+       </section>
+      
+        <section>
+ <img src="../assets/img/assistance.png" class=" rond ronde-picture" alt="Statut">
+  <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-arrow-90deg-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M14.854 4.854a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 4H3.5A2.5 2.5 0 0 0 1 6.5v8a.5.5 0 0 0 1 0v-8A1.5 1.5 0 0 1 3.5 5h9.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4z"/>
+</svg>
+ <h3><strong>Contact et Assistance</strong></h3>
+ 
+       <p>Besoin d'aide ? Trouvez les coordonnées des services d'assistance dédiés pour répondre à vos questions et préoccupations.
+Nous Sommes à Votre Service
+Le gouvernement russe est déterminé à servir ses citoyens. Explorez notre site pour une expérience informative et engageante.</p>
+        </section>
+
 {% endblock %}

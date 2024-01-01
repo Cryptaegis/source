@@ -11,7 +11,7 @@
 .red-band {
   background: #660000;
   font-size: 1rem;
-  z-index:1;
+  z-index: 1;
   position: relative;
   display: flex;
   text-align: center;
@@ -481,7 +481,6 @@
   z-index: 1;
 }
 
-
 .bat-russe {
   top: 20em;
   width: 100%;
@@ -492,7 +491,6 @@
   background-image: url("../img/lubyanka-5182110_640.jpg");
 }
 
-
 .title-mission {
   margin: 0;
   font-size: 22px;
@@ -502,7 +500,7 @@
 }
 
 .page {
-  color: #B1CCC5;
+  color: #b1ccc5;
   margin-bottom: 30%;
 }
 
@@ -635,7 +633,7 @@
   z-index: 0;
   transform: translateX(50px) translateY(50px);
 }
-.dropdown{
+.dropdown {
   position: absolute;
   left: 80%;
   top: 5%;
@@ -744,7 +742,7 @@
   text-decoration: none;
 }
 
-.mention-box{
+.mention-box {
   position: absolute;
   left: 20%;
   margin-top: 10%;
@@ -759,7 +757,7 @@ fieldset {
   margin: 0 auto;
   width: 50%;
   padding: 1em;
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
   border-radius: 1em;
 }
 
@@ -769,10 +767,10 @@ legend {
 
 /*page d'accueil admin*/
 
-.container-accueil-op{
+.container-accueil-op {
   background-color: #000;
 }
-.container-central{
+.container-central {
   background-color: #f1f1f1;
   top: 20%;
   position: absolute;
@@ -780,7 +778,57 @@ legend {
   width: 60vw;
   height: 70vh;
 }
-.mt-3{
-  position:relative;
+.mt-3 {
+  position: relative;
   left: 20%;
+}
+/* pages visiteur */
+section{
+  margin-top:4em;
+  margin-bottom: 4em;
+  width:100%;
+}
+
+aside {
+  position: absolute;
+  width: 50%;
+  padding-left: 0.5rem;
+  left:50%;
+  top: 85em;
+  box-shadow: inset 5px 0 5px -5px #0c0c0c;
+  font-style: italic;
+}
+/*img*/
+
+.container-rectangle{
+  width: 40%;
+  height: 25vh;
+  margin-left: 3%;
+  border-radius: 5%;
+  background-image: url("../img/Citoyen.jpg");
+  background-size: cover;
+  background-position: 30% 40%;
+  object-fit: contain;
+}
+.container-rectangle1{
+  background-image: url("../assets/img/Apropos.jpg");
+}
+.rond{
+  height: 40vh;
+  border-radius: 50%;
+}
+.rond-picture{
+  float:right; 
+}
+
+.ronde-picture {
+  float: top;
+}
+/*icon*/
+.bi-arrow-90deg-right {
+  margin-top: 10%;
+  float: left;
+}
+.bi-arrow-return-right{
+  float:right;
 }
