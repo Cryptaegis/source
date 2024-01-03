@@ -1,0 +1,102 @@
+/* pages visiteur */
+section{
+    width:100%;
+    margin-bottom: 15em;
+  }
+  .section1{
+    text-align: center;
+  }
+ 
+  .section5{
+    width: 50%;
+    margin-left: 25%;
+  }
+  .section6{
+    width: 50%;
+    margin-left: 20%;
+    margin-top: -10em;
+  }
+  aside {
+    position: absolute;
+    width: 50%;
+    box-shadow: inset 5px 0 5px -5px #0c0c0c;
+    font-style: italic;
+  }
+  .aside1{
+    padding-left: 0.5rem;
+    margin-top:-9%;
+    left:55%;
+  }
+  .aside2{
+    width: 50%;
+    box-shadow: inset 5px 0 5px -5px #0c0c0c;
+    font-style: italic;
+    position: absolute;
+    left:15%;
+    margin:-10%;
+    padding-left: 0.5rem;
+  }
+  .aside3{
+    width: 40%;
+    box-shadow: inset 5px 0 5px -5px #0c0c0c;
+    font-style: italic;
+    position: absolute;
+    left:5%;
+    padding-left: 0.5rem;
+    margin-top: 3em;
+  }
+  /*img*/
+  
+  .container-rectangle{
+    width: 40%;
+    height: 25vh;
+    margin-left: 3%;
+    border-radius: 5%;
+    background-image: url("../img/Citoyen.jpg");
+    background-size: cover;
+    background-position: 30% 40%;
+    object-fit: contain;
+  }
+  .rec{
+    margin-top: -10%;
+    float: right;    
+    width: 30%;
+    height: 25vh;
+    background-image: url("../img/Apropos.jpg");
+    background-size: cover;
+    border-radius: 5%;
+    background-position: 30% 40%;
+    object-fit: contain;
+  }
+  .rectangle-picture0{
+    width: 100vw;
+    height: 60vh;
+    background-image: url('../img/Actualité-gouv.jpg');
+    background-size: cover;
+    background-position: 40% 40%;
+    object-fit: contain;
+  }
+  
+  .rond{
+    border-radius: 60%;
+    width: 30%;
+    height: 25vh;
+  }
+  .rond-picture{
+    float:right; 
+  }
+  
+  .ronde-picture {
+    float: top;
+  }
+  /*icon*/
+  .bi-arrow-90deg-right {
+    margin-top: 10%;
+    float: left;
+  }
+  .bi-arrow-return-right{
+    float:right;
+  }
+  .bi-arrow-right{
+    margin-left:50%;
+  }
