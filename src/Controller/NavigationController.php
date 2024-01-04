@@ -23,6 +23,77 @@ class NavigationController extends AbstractController
                 }
                 return $this->render('navigation/home.html.twig');
         }
+        /**
+         * @Route("/ministere", name="ministere", methods={"GET"})
+         */
+        public function ministere(Session $session)
+        {
+                $return = [];
+
+                if ($session->has('message')) {
+                        $message = $session->get('message');
+                        $session->remove('message'); //on vide la variable message dans la session
+                        $return['message'] = $message; //on ajoute à l'array de paramètres notre message
+                }
+                return $this->render('navigation/ministere.html.twig');
+        }
+        /**
+         * @Route("/politics", name="politics", methods={"GET"})
+         */
+        public function politics(Session $session)
+        {
+                $return = [];
+
+                if ($session->has('message')) {
+                        $message = $session->get('message');
+                        $session->remove('message'); //on vide la variable message dans la session
+                        $return['message'] = $message; //on ajoute à l'array de paramètres notre message
+                }
+                return $this->render('navigation/politics.html.twig');
+        }
+        /**
+         * @Route("/Dossier pays", name="land", methods={"GET"})
+         */
+        public function land(Session $session)
+        {
+                $return = [];
+
+                if ($session->has('message')) {
+                        $message = $session->get('message');
+                        $session->remove('message'); //on vide la variable message dans la session
+                        $return['message'] = $message; //on ajoute à l'array de paramètres notre message
+                }
+                return $this->render('navigation/land.html.twig');
+        }
+        /**
+         * @Route("/contact", name="contact", methods={"GET"})
+         */
+        public function contact(Session $session)
+        {
+                $return = [];
+
+                if ($session->has('message')) {
+                        $message = $session->get('message');
+                        $session->remove('message'); //on vide la variable message dans la session
+                        $return['message'] = $message; //on ajoute à l'array de paramètres notre message
+                }
+                return $this->render('navigation/contact.html.twig');
+        }
+        /**
+         * @Route("/Apropos", name="story", methods={"GET"})
+         */
+        public function story(Session $session)
+        {
+                $return = [];
+
+                if ($session->has('message')) {
+                        $message = $session->get('message');
+                        $session->remove('message'); //on vide la variable message dans la session
+                        $return['message'] = $message; //on ajoute à l'array de paramètres notre message
+                }
+                return $this->render('navigation/story.html.twig');
+        }
+
 
         /**
          * @Route("/membre", name="membre")

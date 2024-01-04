@@ -39,7 +39,7 @@ class UtilisateurController extends AbstractController
 
         return $this->redirectToRoute('home');
     }
-
+   
     /**
      *@Route("/new", name="utilisateur_new", methods={"GET","POST"})
      */

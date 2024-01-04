@@ -3,12 +3,18 @@
 {% block title %}Page d'accueil{% endblock %}
  
 {% block body %}
+<body class="home-body">
+      <img src='../assets/img/kisspng-coat-of-arms-of-russia-russian-empire-portable-net-pixabay-5c05f7742abac4.585166981543894900175.9bc2cb45.png' alt="logo" class="home-logos">
 <a class="btn btn-sm btn-danger" href="{{ path('app_login') }}">Connexion</a>
         <h1>Bienvenue sur le Site Gouvernemental de la Fédération de Russie</h1>
+                  {% include "_partials/_navbar.html.twig" %}
+
 
         <section class='section1'>
+        <div class="rectangle-text">
         <h3 ><strong>Actualités Gouvernementales</strong></h3>
         <p>Restez informé des dernières annonces officielles, déclarations gouvernementales, et événements importants touchant la Fédération de Russie.</p>
+        </div>
         <div class="rec1 rectangle-picture0"></div>
         </section>
 
@@ -23,7 +29,7 @@
 </svg>
         </section>
 
-        <section>
+        <section class='section3'>
         <div class="container-rectangle"></div>
         <aside class="aside1">
         <h3><strong>Participation Citoyenne</strong></h3>
@@ -31,7 +37,7 @@
          </aside>
         </section>
 
-        <section>
+        <section class='section4'>
          <div class='rec'></div>
         <span class="aside2">
        <h3><strong>À Propos du Gouvernement</strong></h3>
@@ -60,4 +66,6 @@ Nous Sommes à Votre Service
 Le gouvernement russe est déterminé à servir ses citoyens. Explorez notre site pour une expérience informative et engageante.</p>
         </section>
 
+  
+</body>
 {% endblock %}
