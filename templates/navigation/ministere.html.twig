@@ -3,18 +3,47 @@
 {% block title %}Hello NavigationController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<body class="home-body">
+        {% include "_partials/_header-visitor.html.twig" %}
+        <div class="min-picture">
+        </div>
+          {% include "_partials/_navbar.html.twig" %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/agent_S/source/src/Controller/NavigationController.php'|file_link(0) }}">src/Controller/NavigationController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/agent_S/source/templates/navigation/index.html.twig'|file_link(0) }}">templates/navigation/index.html.twig</a></code></li>
-    </ul>
+<div class="card-A" style="width: 18rem;">
+  <img class="card-img-top" src="../assets/img/Dmitri Ivanov.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Dmitri Ivanov</h5>
+    <p class="card-text">Description : Dmitri Ivanov occupe le poste de Ministre des Affaires Étrangères au sein du gouvernement russe. Diplomate chevronné, il a joué un rôle clé dans la promotion des relations internationales de la Russie, défendant avec conviction les intérêts du pays sur la scène mondiale.</p>
+    <a href="{{ path('contact') }}" class="btn btn-primary">Contact</a>
+  </div>
 </div>
+<div class="card-B" style="width: 15rem;">
+  <img class="card-img-top" src="../assets/img/Natalia A. Petrovna.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Natalia A. Petrovna</h5>
+    <p class="card-text">Ministre de la Santé
+Natalia A. Petrovna est la Ministre de la Santé de la Fédération de Russie, dédiée à promouvoir le bien-être de la population. Médecin qualifiée et ardente défenseure de la santé publique, elle dirige les efforts visant à améliorer les services de santé.</p>
+    <a href="{{ path('contact') }}" class="btn btn-primary">Contact</a>
+  </div>
+</div>
+<div class="card-C" style="width: 18rem;">
+  <img class="card-img-top" src="../assets/img/Sergei Kuznetsov.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Sergei Kuznetsov</h5>
+    <p class="card-text">
+Description : Sergei Kuznetsov est le Ministre des Finances de la Fédération de Russie. Économiste aguerri, il a dirigé avec succès des réformes financières cruciales, stabilisant l'économie nationale et stimulant la croissance. Sa vision stratégique guide les politiques économiques du pays dans un contexte mondial complexe.</p>
+    <a href="{{ path('contact') }}" class="btn btn-primary">Contact</a>
+  </div>
+</div>
+<div class="card-D" style="width: 18rem;">
+  <img class="card-img-top" src="../assets/img/Svetlana V. Ivanova.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Svetlana V. Ivanova</h5>
+    <p class="card-text">Ministre des Finances
+Svetlana V. Ivanova, économiste chevronnée et femme d'État accomplie, occupe actuellement le poste de Ministre des Finances au sein du gouvernement russe. Elle apporte une expertise exceptionnelle en matière de gestion financière et joue un rôle clé dans le développement des politiques économiques visant à renforcer la stabilité financière du pays.</p>
+    <a href="{{ path('contact') }}" class="btn btn-primary">Contact</a>
+  </div>
+</div>
+  {% include "_partials/_footer.html.twig" %}
+</body>
 {% endblock %}

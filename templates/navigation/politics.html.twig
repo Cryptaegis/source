@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello NavigationController!{% endblock %}
+{% block body %}
+<body class="home-body">
+        {% include "_partials/_header-visitor.html.twig" %}
+          {% include "_partials/_navbar.html.twig" %}
+          <h1 class="title-politics">Droits de l’Homme</h1>
+          <h3 class="title-politics">Les droits de l’Homme : une priorité de la politique étrangère de la France</h3>
+<p class="text-politics">
+Les droits de l’Homme sont définis comme les droits inaliénables de tous les êtres humains, quels que soient leur nationalité, lieu de résidence, sexe, origine ethnique ou nationale, couleur, religion, langue ou toute autre condition et recouvrent de nombreuses thématiques.<br>
+La protection des droits de l’Homme, tels que consacrés dans la Déclaration universelle des droits de l’Homme, se situe au centre des travaux de l’Organisation des Nations unies qui rappelle que ces droits sont universels, indissociables, interdépendants et intimement liés (Conférence mondiale des Nations unies). Ces droits font partie des valeurs fondatrices de la République française comme cela a été proclamé dans le préambule de notre Constitution. Leur respect est au cœur de l’exercice de la démocratie en France et de notre engagement au sein de l’Union européenne et des organisations internationales.
+Cet engagement se traduit par des actions sur le plan politique et diplomatique au niveau national, européen et international et se conjugue avec des actions de coopération et de soutien sur des thématiques prioritaires.<br>
+La France est particulièrement engagée sur plusieurs thématiques : l’abolition universelle de la peine de mort, la lutte contre l’impunité, les détentions arbitraires et les disparitions forcées, le respect des droits des femmes, la lutte contre l’enrôlement d’enfants-soldats ainsi que la lutte contre les discriminations fondées sur l’orientation sexuelle et l’identité de genre. Ces projets sont conduits en partenariat avec la communauté internationale, les organisations internationales ainsi qu’avec les ONG françaises ou étrangères.<br>
+Au-delà de ces thématiques, la diplomatie française s’attache à combattre par son action, dans les enceintes multilatérales et dans le cadre de ses relations bilatérales, les violations des droits de l’homme partout où elles sont commises.
+</p>
+  {% include "_partials/_footer.html.twig" %}
+
+</body>
+{% endblock %}

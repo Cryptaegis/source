@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello NavigationController!{% endblock %}
+{% block body %}
+<body class="home-body">
+        {% include "_partials/_header-visitor.html.twig" %}
+          {% include "_partials/_navbar.html.twig" %}
+          <h1 class="title-politics">A propos</h1>
+          <div class="img-propos"></div>
+<p class="text-propos">
+Bienvenue sur le site gouvernemental russe, une plateforme dédiée à fournir des informations essentielles et à faciliter la communication entre les citoyens et les divers départements gouvernementaux. Cette page a pour objectif de vous familiariser avec la mission, les services et les valeurs qui guident notre gouvernement. Explorez nos rubriques pour accéder aux dernières actualités, aux politiques gouvernementales, aux ressources publiques et aux initiatives en cours.<br>
+Notre engagement envers la transparence se reflète dans la publication régulière de rapports, de données statistiques et d'informations sur les projets en cours. Découvrez les services en ligne disponibles pour simplifier vos interactions avec l'administration et faciliter les démarches administratives. Le site vise également à promouvoir la participation citoyenne en fournissant des canaux de rétroaction et d'engagement communautaire.<br>
+Naviguez à travers nos sections pour en apprendre davantage sur la structure gouvernementale, les institutions clés et les initiatives stratégiques. Nous sommes déterminés à promouvoir la croissance, le bien-être et la sécurité de nos citoyens. Merci de visiter notre site et de participer à la construction d'un avenir prospère pour la Russie.
+
+</p>
+<a class="btn btn-sm btn-danger" href="{{ path('home') }}">Accueil</a>
+  {% include "_partials/_footer.html.twig" %}
+
+</body>
+{% endblock %}
