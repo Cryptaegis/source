@@ -78,7 +78,10 @@ class NavigationController extends AbstractController
                         $return['message'] = $message; //on ajoute à l'array de paramètres notre message
                 }
                 return $this->render('navigation/contact.html.twig');
+        
         }
+
+        
         /**
          * @Route("/Apropos", name="story", methods={"GET"})
          */
