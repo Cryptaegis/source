@@ -641,6 +641,16 @@
 
 /*footer start*/
 /*Contact*/
+footer{
+  background-color: #f1f1f1;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  margin-top: 10%;
+
+}
 .contact-ban {
   border: #000 solid 3px;
   margin: 0 auto;
@@ -700,7 +710,7 @@
 .big_logos {
   width: 10%;
   height: 30vh;
-  position: relative;
+  position: absolute;
   left: 10px;
   background-size: contain;
   background-repeat: no-repeat;
@@ -712,7 +722,9 @@
   margin: 0 auto;
 }
 .notion {
+  position: relative;
   padding: 10px;
+  left: 10em;
   width: 20vw;
   text-align: center;
 }
@@ -745,6 +757,7 @@
 .mention-box {
   position: absolute;
   left: 20%;
+  top: 30em;
   margin-top: 10%;
   text-align: center;
 }

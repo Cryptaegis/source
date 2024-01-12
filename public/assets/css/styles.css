@@ -171,14 +171,13 @@ aside {
 .card-B,
 .card-C,
 .card-D {
-  margin-top: 5em;
   background-color: #050505;
   color: azure;
 }
 
 .card-A,
 .card-D {
-  margin-left: 20%;
+  left: 20%;
 }
 .card-B,
 .card-C {
@@ -186,12 +185,12 @@ aside {
 }
 .card-B {
   bottom: 48em;
-  margin-right: 20%;
+  right: 20%;
   float: right;
 }
 .card-C {
   bottom:50em;
-  margin-left: 60%;
+  left: 60%;
   float: left;
 }
 .card-text{

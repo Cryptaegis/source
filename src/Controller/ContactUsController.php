@@ -26,19 +26,14 @@ class ContactUsController extends AbstractController
             $contact = $form->getData();
             $manager->persist($contact);
             $manager->flush();
+            return $this->redirectToRoute('app_contact_us');
             $this->addFlash(
                 'success',
                 'Nous vous rapellerons dans 11jours!'
             );
-            return $this->redirectToRoute('app_contact_us');
-        }else {
-            $this->addFlash(
-                'danger',
-                $form->getErrors()
-            );
         }
 
-
+       
         return $this->render('contact_us\index.html.twig', [
             'form' => $form->createView(),
         ]);
