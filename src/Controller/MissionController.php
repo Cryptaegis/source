@@ -61,7 +61,7 @@ class MissionController extends AbstractController
             $planque =$data->getPlanque();
             $dated = $data->getDateDebut();
             $datef = $data->getDateFin();
-            return $this->render('agent/index.html.twig',['Nom'=>$nom, 'Alias' => $alias, 'Statut' => $statut, 'Description' => $description, 'Contact' => $contact, 'Cible' => $cible, 'Planque'=> $planque, 'DateDebut' => $dated, 'DateFin'=>$datef ]);
+            return $this->render('navigation/membre.html.twig',['Nom'=>$nom, 'Alias' => $alias, 'Statut' => $statut, 'Description' => $description, 'Contact' => $contact, 'Cible' => $cible, 'Planque'=> $planque, 'DateDebut' => $dated, 'DateFin'=>$datef ]);
         }else{
             return $this->render('mission/show.html.twig',
             ['mission_form'=>$form]

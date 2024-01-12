@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %} {% block title %}Inscription{% endblock %} {%
 block body %}
 <h1>Inscription</h1>
-
+<body class='op-ac'>
 <fieldset>
   <legend>Inscrivez vous</legend>
   {{ form_start(form, ["attr", ["id", "new_edit_utilisateur"]]) }}
@@ -34,5 +34,5 @@ block body %}
   <div class="col-12">
     <a class="btn btn-info" href="{{ path('home') }}">Page d'accueil</a>
   </div>
-
+</body>
   {% endblock %}

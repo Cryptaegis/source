@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Controller;
-
+use App\Entity\Mission;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\ORM\EntityManagerInterface;
+use Twig\Environment;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\HttpFoundation\Session\Session;
 
@@ -102,9 +104,25 @@ class NavigationController extends AbstractController
          * @Route("/membre", name="membre")
          * @IsGranted("IS_AUTHENTICATED_FULLY")
          */
-        public function membre(Session $session)
+        public function membre(Session $session, EntityManagerInterface $entityManager)
         {
-                $return = [];
+
+                
+                        $mission = new Mission();
+                        $form = $this->createForm(MissionFormType::class, $mission);
+                        $form->handleRequest($request);
+            $nom = $entityManager->Nom(MissionFormType::class, $mission);
+            $alias = $entityManager->Alias;
+            $statut = $entityManager->Statut;
+            $description = $entityManager->Description;
+            $contact = $entityManager->Contact;
+            $cible = $entityManager->Cible;
+            $planque =$entityManager->Planque;
+            $dated = $entityManager->DateDebut;
+            $datef = $entityManager->DateFin;
+
+        $nom = ""; // Declare and initialize the variable '$nom'
+        return $this->render('navigation/membre.html.twig',['Nom'=>$nom, 'Alias' => $alias, 'Statut' => $statut, 'Description' => $description, 'Contact' => $contact, 'Cible' => $cible, 'Planque'=> $planque, 'DateDebut' => $dated, 'DateFin'=>$datef ]);
 
                 if ($session->has('message')) {
                         $message = $session->get('message');

@@ -3,6 +3,8 @@
 {% block title %}Modification compte{% endblock %}
 
 {% block body %}
+<body class='op-ac'>
+
         <h1>Modifier votre compte</h1>
         <fieldset>
                 <legend>Modification</legend>
@@ -28,4 +30,5 @@
         <a class="btn btn-outline-primary" href="{{ path('membre') }}">Page membre</a>
 
         {{ include('utilisateur/_delete_form.html.twig') }}
+        </body>
 {% endblock %}

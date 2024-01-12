@@ -17,7 +17,8 @@
 }
 .btn-danger {
   position: relative;
-  left: 80%;
+  left: 70%;
+  margin-left: 2%;
 }
 h1 {
   font-size: 2rem;
@@ -171,27 +172,27 @@ aside {
 .card-B,
 .card-C,
 .card-D {
+  position: relative;
   background-color: #050505;
   color: azure;
 }
 
-.card-A,
-.card-D {
-  left: 20%;
+.card-A{
+  left: 25%;
+  top: 30%;
+
 }
-.card-B,
-.card-C {
-  position: relative;
-}
+
 .card-B {
-  bottom: 48em;
-  right: 20%;
-  float: right;
+  left: 60%;
+  top: 30%;
 }
 .card-C {
-  bottom:50em;
+  left: 25%;
+
+}
+.card-D{
   left: 60%;
-  float: left;
 }
 .card-text{
   text-align: center;

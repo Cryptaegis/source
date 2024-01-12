@@ -512,7 +512,7 @@
   justify-content: center;
   align-items: stretch;
   padding: 10px 0px 10px;
-  width: 100%;
+  width: 50em;
   max-width: 62.5rem;
   border-radius: 5px;
   margin: 0 auto;
@@ -642,7 +642,6 @@
 /*footer start*/
 /*Contact*/
 footer{
-  background-color: #f1f1f1;
   height: 100%;
   width: 100%;
   position: relative;
