@@ -15,7 +15,9 @@
 
                         {% if app.user %}
                                 <div class="mb-3">
-                                        Bonjour {{ app.user.id }} <a class="btn btn-sm btn-danger" href="{{ path('membre') }}">Agent</a>
+                                        Bonjour {{ app.user.id }} 
+                                        <a class="btn btn-sm btn-danger" href="{{ path('home') }}">Accueil</a>
+                                        <a class="btn btn-sm btn-danger" href="{{ path('membre') }}">Agent</a>
                                         <a class="btn btn-sm btn-danger" href="{{ path('admin') }}">Opérateur</a>
                                         <a class="btn btn-sm btn-danger" href="{{ path('app_logout') }}">Déco</a>
                                 </div>
