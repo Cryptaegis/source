@@ -11,11 +11,11 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class AgentController extends AbstractController
 {
-    #[Route('/agent', name: 'ac-agent')]
+    #[Route('/agent', name: 'agent')]
     public function index()
     {
-        return $this->render('agent/index.html.twig', [
-            'controller_name' => 'AgentController',
+        return $this->render('navigation/quest.html.twig', [
+            'controller_name' => 'navigationController',
         ]);
         
     }

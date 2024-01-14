@@ -1,11 +1,8 @@
 <?php
 
 namespace App\Controller;
-use App\Entity\Mission;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use Doctrine\ORM\EntityManagerInterface;
-use Twig\Environment;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\HttpFoundation\Session\Session;
 
@@ -99,35 +96,22 @@ class NavigationController extends AbstractController
                 return $this->render('navigation/story.html.twig');
         }
 
-
+/**
+ * Class MissionController
+ * @package app\Controller
+ * 
+ */
         /**
          * @Route("/membre", name="membre")
          * @IsGranted("IS_AUTHENTICATED_FULLY")
          */
-        public function membre(Session $session, EntityManagerInterface $entityManager)
+        public function membre(Session $session)
         {
-
-                
-                        $mission = new Mission();
-                        $form = $this->createForm(MissionFormType::class, $mission);
-                        $form->handleRequest($request);
-            $nom = $entityManager->Nom(MissionFormType::class, $mission);
-            $alias = $entityManager->Alias;
-            $statut = $entityManager->Statut;
-            $description = $entityManager->Description;
-            $contact = $entityManager->Contact;
-            $cible = $entityManager->Cible;
-            $planque =$entityManager->Planque;
-            $dated = $entityManager->DateDebut;
-            $datef = $entityManager->DateFin;
-
-        $nom = ""; // Declare and initialize the variable '$nom'
-        return $this->render('navigation/membre.html.twig',['Nom'=>$nom, 'Alias' => $alias, 'Statut' => $statut, 'Description' => $description, 'Contact' => $contact, 'Cible' => $cible, 'Planque'=> $planque, 'DateDebut' => $dated, 'DateFin'=>$datef ]);
-
+                   
                 if ($session->has('message')) {
                         $message = $session->get('message');
                         $session->remove('message'); //on vide la variable message dans la session
-                        $return['message'] = $message; //on ajoute à l'array de paramètres notre message
+                       $return['message'] = $message; //on ajoute à l'array de paramètres notre message
                 }
                 //test si un utilisateur est connecté
                 $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');

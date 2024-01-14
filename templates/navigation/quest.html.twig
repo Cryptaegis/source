@@ -1,0 +1,52 @@
+ {% extends 'base.html.twig' %}
+
+ 
+ {% block body  %}
+        <body class="ac-ag">
+            <!-- ================ -->
+               <div class="dropdown ">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Menu
+  </button>
+  <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="{{ path('app_logout') }}">Déconnexion</a>
+  </div>
+</div>
+
+                  {% include "_partials/_header.html.twig" %}
+ <section class="page">
+        <section>
+            <ul class="tabs-controls">
+                <li class="tabs-controls__item">
+                    <a href="#" class="tabs-controls__link" data-id="1"> {{Alias}}
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+                <section class="cards-container">
+            
+             <div class="card" id="7">
+                <p class="title-mission">{{Nom}}</p>
+                <p>
+                <p>Statut:{{Statut}}</p><br>
+                <p>Alias : {{Alias}} <br>
+                <p> {{Description}} </p><<br>
+                <p>Agent:</p><br>
+                <p>Contact: {{Contact}}</p><br>
+                <p>Cible:{{Cible}}</p><br>
+                <p>Planque: {{Planque}} </p><br>
+                <p>Spécialité:</p><br>
+                <p>Date de début: {{DateDebut}}</p>
+                <p> Date de fin: {{DateFin}}</p><br>
+                </p>
+            </div>
+        </section>
+    </section>
+
+    </section>
+    
+          {% include "_partials/_footer.html.twig" %}
+
+        </body>
+    {% endblock %}
