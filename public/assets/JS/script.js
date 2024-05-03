@@ -47,3 +47,7 @@ $("#new_edit_utilisateur").on('submit', function(){
         return false;
     }
 })
+
+function goBack() {
+	window.history.back();
+}

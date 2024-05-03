@@ -2,18 +2,23 @@
 
 {% block title %}Page admin{% endblock %}
 
-{% block body %}
-       <body class="container-accueil-op">
+{% block body  %}
+       <body class="container-accueil-op ">
+
         <div class="container-central">
+        <div>   
            <a class="btn btn-primary mt-3" href="{{ path('utilisateur_edit', {'id': app.user.id}) }}">Modifier mon compte</a>
         <a class="btn btn-info mt-3" href="{{ path('utilisateur_index') }}">Voir la liste des utilisateurs inscrit</a>
                 <a class="btn btn-info mt-3" href="{{ path('Mission') }}">Sensitives sources</a>
-                <a class="btn btn-sm btn-danger" href="{{ path('home') }}">Accueil</a>
+                <a class="btn btn-info mt-3" href="{{ path('home') }}">Retour Accueil</a>
+         <a class="btn btn-info mt-3" href="{{ path('app_logout') }}">Déco</a>
+        </div>
+        <br>
+        <h1>Administrateur</h1>
+        <br>
 
-        <h1>Ma page admin</h1>
-        <h2>Cher {{ app.user.id }},</h2>
 
-        <p>
+        <p class="body-text-central">
                
 
 Nous sommes ravis de vous accueillir sur votre compte administrateur au sein de notre système. En tant qu'opérateur clé, vous jouez un rôle essentiel dans la réalisation des objectifs de notre organisation et dans le soutien des missions gouvernementales russes.
@@ -27,6 +32,8 @@ Nous sommes confiants que votre dévouement et votre expertise contribueront sig
 Si vous avez des questions ou avez besoin de clarifications sur votre rôle ou sur le fonctionnement du système, n'hésitez pas à contacter notre équipe de support dédiée.
 
 Nous vous remercions de votre service dévoué en tant qu'agent au gouvernement russe et sommes impatients de travailler ensemble pour atteindre nos objectifs communs.
+        <br>
+        <br>
 
 Bienvenue à bord !
         </p>

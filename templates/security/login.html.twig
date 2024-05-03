@@ -15,18 +15,17 @@
 
                         {% if app.user %}
                                 <div class="mb-3">
-                                        Bonjour {{ app.user.id }} 
+                                        <h4>Bonjour</h4> 
+                                       <p> Une erreur c'est produite lors de la connexion, veuillez réessayer. </p>  
                                         <a class="btn btn-sm btn-danger" href="{{ path('home') }}">Accueil</a>
-                                        <a class="btn btn-sm btn-danger" href="{{ path('membre') }}">Agent</a>
-                                        <a class="btn btn-sm btn-danger" href="{{ path('admin') }}">Opérateur</a>
                                         <a class="btn btn-sm btn-danger" href="{{ path('app_logout') }}">Déco</a>
                                 </div>
                         {% else %}
                                 <div class="row">
-                                        <div class="col-12 mt-3">
+                                        <div class="col-12 mt-3 field-form">
                                                 <input type="text" value="{{ last_username }}" name="email" id="inputUsername" class="form-control" required autofocus placeholder="pseudo">
                                         </div>
-                                        <div class="col-12 mt-3 mb-3">
+                                        <div class="col-12 mt-3  field-form">
                                                 <input type="password" name="password" id="inputPassword" class="form-control" required placeholder="mot de passe">
                                         </div>
                                 </div>
@@ -34,21 +33,20 @@
                                         Connexion
                                 </button>
                         {% endif %}
+                                    <button onclick="goBack()" style="margin-top: 20px;" class="btn btn-danger">Retour</button>
 
                         <input type="hidden" name="_csrf_token"
                         value="{{ csrf_token('authenticate') }}"
                         >
 
-                        {#
-                        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                        See https://symfony.com/doc/current/security/remember_me.html
+                
 
                         <div class="checkbox mb-3">
                                 <label>
                                         <input type="checkbox" name="_remember_me"> Remember me
                                 </label>
                         </div>
-                        #}
+                
                 </fieldset>
         </form>
         </body>

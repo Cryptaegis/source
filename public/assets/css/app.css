@@ -783,14 +783,18 @@ legend {
   background-color: #000;
 }
 .container-central {
+  top:20%;
   background-color: #f1f1f1;
-  top: 20%;
   position: absolute;
-  left: 20%;
-  width: 60vw;
-  height: 70vh;
+ 
 }
 .mt-3 {
   position: relative;
   left: 20%;
+
+}
+
+.field-form{
+
+  width: 60%;
 }

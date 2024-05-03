@@ -23,8 +23,6 @@
 h1 {
   font-size: 2rem;
   font-weight: bold;
-  margin-top: 5%;
-  margin-bottom: 10%;
   text-align: center;
 }
 section {
@@ -231,4 +229,9 @@ aside {
   width:40%;
   margin-top: 3em;
   margin-bottom: 3em;
+}
+.body-text-central{
+  text-align: center;
+  margin-left: 10%;
+  width: 80%;
 }
