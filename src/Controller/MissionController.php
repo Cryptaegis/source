@@ -18,7 +18,7 @@ class MissionController extends AbstractController
     /**
      * @Route("/show", name="Mission")
      */
-    public function show( Request $request, EntityManagerInterface $entityManager)
+    public function show(Request $request, EntityManagerInterface $entityManager)
     {
         //Récupération de la liste des missions en base
 
@@ -38,7 +38,7 @@ class MissionController extends AbstractController
             $planque = $data->getPlanque();
             $dated = $data->getDateDebut();
             $datef = $data->getDateFin();
-            return $this->render('navigation/quest.html.twig', ['Nom'=> $nom, 'Alias' => $alias, 'Statut' => $statut, 'Description' => $description, 'Contact' => $contact, 'Cible' => $cible, 'Planque'=> $planque, 'DateDebut' => $dated, 'DateFin'=>$datef ]);
+            return $this->render('navigation/quest.html.twig', ['Nom' => $nom, 'Alias' => $alias, 'Statut' => $statut, 'Description' => $description, 'Contact' => $contact, 'Cible' => $cible, 'Planque' => $planque, 'DateDebut' => $dated, 'DateFin' => $datef]);
             $entityManager->persist($mission);
             $entityManager->flush();
         } else {
@@ -50,8 +50,5 @@ class MissionController extends AbstractController
                 'controller_name' => 'MissionController',
             ]);
         }
-
-
-
     }
 }

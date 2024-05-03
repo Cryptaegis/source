@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -17,6 +18,5 @@ class AgentController extends AbstractController
         return $this->render('navigation/quest.html.twig', [
             'controller_name' => 'navigationController',
         ]);
-        
     }
 }

@@ -13,7 +13,7 @@ class Mission
     #[ORM\Column]
     private ?int $id = null;
     #[ORM\Column(length: 255)]
-        /*@Assert\NotBlank*/
+    /*@Assert\NotBlank*/
     private ?string $Nom = null;
     /*@Assert\NotBlank*/
     #[ORM\Column(length: 255)]

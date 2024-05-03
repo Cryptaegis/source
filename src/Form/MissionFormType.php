@@ -30,18 +30,18 @@ class MissionFormType extends AbstractType
                 'constraints' => [
                     new IsTrue([
                         'message' => 'I know, it\'s silly, but you must agree to our terms.'
-                    ])]])
-                    ->add('submit', SubmitType::class)
-                    
-        ;
+                    ])
+                ]
+            ])
+            ->add('submit', SubmitType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
             'data_class' => Mission::class,
-            'csrf_protection'=> true,
-            'csrf_field_name' =>'_token',
+            'csrf_protection' => true,
+            'csrf_field_name' => '_token',
             'csrf_token_id' => 'mission_item',
         ]);
     }

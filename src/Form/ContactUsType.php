@@ -50,7 +50,9 @@ class ContactUsType extends AbstractType
                     new Length(['min' => 2, 'max' => 100, 'minMessage' => "minErrorMessage", 'maxMessage' => "MaxErrorMessage"])
                 ]
             ])
-            ->add('message', TextareaType::class,
+            ->add(
+                'message',
+                TextareaType::class,
                 [
                     'attr' => [
                         'class' => 'form-control'
@@ -62,7 +64,8 @@ class ContactUsType extends AbstractType
                     'constraints' => [
                         new NotBlank(),
                     ]
-                ])
+                ]
+            )
             ->add('submit', SubmitType::class);
     }
     public function configureOptions(OptionsResolver $resolver): void

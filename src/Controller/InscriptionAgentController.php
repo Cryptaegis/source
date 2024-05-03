@@ -23,7 +23,7 @@ class InscriptionAgentController extends AbstractController
         $utilisateur = $this->getUser();
         $utilisateur = $doctrine->getRepository(Utilisateur::class)->find($id);
         // Verify if the current user has the right to modify the targeted user
-        if ($id != $id ){
+        if ($id != $id) {
             // un utilisateur ne peut pas en modifier un autre
             $session->set("message", "Vous ne pouvez pas modifier cet utilisateur");
             return $this->redirectToRoute('membre');
@@ -43,6 +43,5 @@ class InscriptionAgentController extends AbstractController
             'utilisateur' => $utilisateur,
             'form' => $form->createView(),
         ]);
-    } 
-     
+    }
 }

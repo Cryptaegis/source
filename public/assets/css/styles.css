@@ -4,7 +4,9 @@
 .nav-item {
   height: 30%;
 }
-
+body{
+  font-family: "Courier Prime", monospace;
+}
 /* navbar-end */
 .home-logos {
   width: 10%;

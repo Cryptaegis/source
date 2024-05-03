@@ -22,22 +22,22 @@ class LoginController extends AbstractController
         if ($this->getUser()) {
             return $this->redirectToRoute('home');
         }
-       $authChecker = $this->container->get('security.authorization_checker');
-       if ($authChecker->isGranted('ROLE_ADMIN')) {
-           return $this->redirectToRoute('Mission');
-       }
-       if ($authChecker->isGranted('ROLE_USER')) {
-           return $this->redirectToRoute('ac-agent');
-       }
-       return $this->render('login/login.html.twig', [
-        'email' => $authenticationUtils->getLastUsername(),
-        'error'         => $authenticationUtils->getLastAuthenticationError(),
-    ]);
+        $authChecker = $this->container->get('security.authorization_checker');
+        if ($authChecker->isGranted('ROLE_ADMIN')) {
+            return $this->redirectToRoute('Mission');
+        }
+        if ($authChecker->isGranted('ROLE_USER')) {
+            return $this->redirectToRoute('ac-agent');
+        }
+        return $this->render('login/login.html.twig', [
+            'email' => $authenticationUtils->getLastUsername(),
+            'error'         => $authenticationUtils->getLastAuthenticationError(),
+        ]);
 
         return $this->render('login/login.html.twig', ['email' => $lastUsername, 'error' => $error]);
     }
-            
-   
+
+
 
 
 
